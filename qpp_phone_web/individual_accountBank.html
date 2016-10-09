@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	 <meta content="yes" name="apple-mobile-web-app-capable">
+ <meta content="yes" name="apple-touch-fullscreen">
+ <meta content="telephone=no,email=no" name="format-detection">
+ <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+ <meta name="keywords" content="coqoi"/>
+ <title>银行账户--钱婆婆手机版</title>
+ <!-- 忽略页面中的数字识别为电话，忽略email识别 -->
+ <meta name="format-detection" content="telphone=no, email=no"/>
+ <!-- 启用360浏览器的极速模式(webkit) -->
+ <meta name="renderer" content="webkit">
+ <!-- 避免IE使用兼容模式 -->
+ <meta http-equiv="X-UA-Compatible" content="IE=edge">
+ <!-- 不让百度转码 -->
+ <meta http-equiv="Cache-Control" content="no-siteapp" />
+ <!--隱藏底部 iPhone button bar-->
+ <meta name="apple-mobile-web-app-capable" content="yes">
+<!--icon图标-->
+ <link rel="apple-touch-icon" sizes="114x114" href="" />
+<!--定义loading图片-->
+ <link rel="apple-touch-startup-image" href="/startup.png">
+ <script type="text/javascript" src="js/jquery-1.8.0.min.js" ></script>
+ <!--flexible为手机自适应的js插件-->
+ <script type="text/javascript" src="js/flexible.js" ></script>
+ <script type="text/javascript" src="js/flexible_css.js" ></script>
+
+ <link href="css/m_style.css" type="text/css" rel="stylesheet">
+</head>
+<body>
+	<div class="object-head fqa_head">
+    <img src="images/back.png" alt="" class="object-back" onclick='history.go(-1)'>
+     <div class="nav_icon">
+      <span class="addbank-icon" onclick="addbank()"></span>     
+     </div>
+     <p>银行账户</p>
+ </div>
+
+  <div class="individual_accountBank">
+
+  <!--如果用户还没有添加银行卡则显示一下内容-->
+    <div class="no-bank-tips" style="display: none">
+      <h3>您还没有添加银行卡</h3>
+      <p onclick="addbank()">添加银行卡</p>
+    </div>
+
+
+
+
+  <!--如果用户已添加银行卡则显示以下内容-->
+
+     <!--判断调去的银行名称，给其加上对应的class，从而区别银行卡片的背景色-->
+     <!--例如，交通银行则添加 commbank的class-->
+   <div class="bank-lsit commbank">
+     <h3>交通银行<span>储蓄卡</span></h3><!--此处通过动态获取银行卡名称-->
+     <dl>
+       <dd>****</dd>
+       <dd>****</dd>
+       <dd>****</dd>
+       <dd>0245</dd><!--此处获取银行卡后四位数-->
+     </dl>
+     <span class="bank-del"></span>
+   </div>
+
+
+   <div class="bank-lsit bocbank">
+     <h3>中国银行<span>储蓄卡</span></h3><!--此处通过动态获取银行卡名称-->
+     <dl>
+       <dd>****</dd>
+       <dd>****</dd>
+       <dd>****</dd>
+       <dd>0245</dd><!--此处获取银行卡后四位数-->
+     </dl>
+     <span class="bank-del"></span>
+   </div>
+
+  </div><!--end-->
+
+     <!--删除添加-->
+   <!--删除-->
+  <div class="pup-box del-bank-box" style="display: none">
+   <div class="boxbg"></div>
+   <div class="del-tips">
+     <p>您确定要删除尾号<span>0428</span>的交通银行储蓄卡吗？</p>
+      <dl>
+        <dd class="del-sure">确定</dd>
+        <dd class="del-cancel">取消</dd>
+      </dl>
+   </div>
+  </div>
+
+  <!--添加-->
+  <!--银行联动表单无暂无法完成-->
+   <div class="add-bank-box" style="display: none;">
+   <form action="">
+     <ul>
+       <li>
+         <lable for="bank-name"><span>银行名称</span><select name="bank-name" id="bank-name">
+           <option value="">请选择银行</option>
+           <option value="招商银行">招商银行</option>
+           <option value="中国银行">中国银行</option>
+           <option value="中国工商银行">中国工商银行</option>
+           <option value="中国建设银行">中国建设银行</option>
+           <option value="中国农业银行">中国农业银行</option>
+           <option value="中国邮政储蓄银行">中国邮政储蓄银行</option>
+           <option value="交通银行">交通银行</option>
+           <option value="上海浦发发展银行">上海浦发发展银行</option>
+           <option value="深圳发展银行">深圳发展银行</option>
+           <option value="中国民生银行">中国民生银行</option>
+           <option value="兴业银行">兴业银行</option>
+           <option value="平安银行">平安银行</option>
+           <option value="北京银行">北京银行</option>
+           <option value="天津银行">天津银行</option>
+           <option value="上海银行">上海银行</option>
+           <option value="华夏银行">华夏银行</option>
+           <option value="光大银行">光大银行</option>
+           <option value="广发银行">广发银行</option>
+           <option value="中信银行">中信银行</option>
+           <option value="上海农商银行">上海农商银行</option>
+         </select>
+         </lable>
+       </li>
+       <li>
+         <lable for="bank-number"><span>银行卡号</span><input type="text" id="bank-number" name="bank-number" placeholder="请输入银行卡号"></lable>
+       </li>
+       <div id="city_3">
+       <li>
+         <lable for="bank-province"><span>开户省份</span><select name="bank-province" id="bank-province" class="prov"></select></lable>
+       </li>
+       <li>
+         <lable for="bank-city"><span>开户城市</span><select name="bank-city" id="bank-city" class="city" disabled="disabled"></select></lable>
+       </li>
+       </div>
+       <li>
+         <lable for="bank-branch"><span>支行名称</span><input type="text" id="bank-branch" name="bank-branch" placeholder="请输入支行名称"></lable>
+       </li>
+       <li>
+         <lable for="cer-phone-bank"><span>手机号</span><input type="text" id="cer-phone-bank" name="cer-phone-bank" placeholder="请输入认证手机号"></lable>
+       </li>
+     </ul>
+     <dl>
+       <dd class="ver-code"><input type="text" name="bank-ver-code" placeholder="输入验证码"></dd>
+       <dd class="get-ver-code">获取验证码</dd>
+     </dl>
+      
+      <div class="add-button">
+        <p class="addbank-but cancel-addbank">取消</p>
+        <input type="submit" value="确认添加" class="addbank-but sure-addbank" onclick="return addbankxx()">
+      </div>
+   </form>
+   </div>
+
+    
+
+<script type="text/javascript" src="js/jquery.cityselect.js"></script>
+<script type="text/javascript">
+$(function(){ 
+  //默认地址
+  $("#city_3").citySelect({
+      prov:"湖北", 
+      city:"武汉"
+  });
+  
+})  
+  
+</script>
+
+    <script>
+    //删除银行卡
+      $('.bank-del').click(function(){
+        $('.del-bank-box').show();
+      })
+    //取消删除
+      $('.del-cancel').click(function(){
+        $('.del-bank-box').hide();
+      })
+    //确定删除，需要删除数据库信息，暂不写
+
+
+    //添加银行卡
+    function addbank(){
+        $('.add-bank-box').show();
+        $('.individual_accountBank').hide();
+        $('.addbank-icon').hide();
+        //其他验证因为暂时不做
+    }
+    //取消添加
+      $('.cancel-addbank').click(function(){
+        $('.add-bank-box').hide();
+        $('.individual_accountBank').show()
+        $('.addbank-icon').show();
+      })
+    //确定添加，信息需要写入数据库信息，暂不写
+
+
+    var bankselect=$('select');
+    bankselect.blur(function(){
+    if(bankselect.val()!=''){
+      bankselect.css('color','#333')
+      }
+    })
+
+    function addbankxx(){
+      var addbankname =$('select[name="bank-name"]').val();
+      var addbanknumber =$('input[name="bank-number"]').val();
+      var addbankprovince =$('select[name="bank-province"]').val();
+      var addbankcity =$('select[name="bank-city"]').val();
+      var addbankbranch =$('input[name="bank-branch"]').val();
+      var cerphonebank =$('input[name="cer-phone-bank"]').val();
+
+      if(addbankname==''){
+        alert('请选择您要添加的银行')
+        return false;
+      }
+      if(addbanknumber==''){
+        alert('请输入您的银行账号')
+        return false;
+      }
+      if(addbankprovince==''){
+        alert('请选择您的银行卡开户省份')
+        return false;
+      }
+      if(addbankcity==''){
+        alert('请选择您的银行卡开户城市')
+        return false;
+      }
+      if(addbankbranch==''){
+        alert('请填写您的银行卡开户支行，如不清楚，请咨询该卡官方客服')
+        return false;
+      }
+      if(cerphonebank==''){
+        alert('请填写您认证过的手机号')
+        return false;
+      }
+
+    }
+    </script>
+</body>
+</html>

@@ -1,0 +1,58 @@
+@charset "utf-8";
+/* CSS Document */
+
+.jedatebox{width:9rem;height:10rem; border:1px #f2f2f2 solid;position: absolute;background-color:#fff; display:none; cursor:default;left:0;right:0;bottom: 0;margin:auto;}
+.jedatebox.dateshow{display:block;}
+.jedatebox .jedatetop{width:100%;background: #ee575b; color:#fff; overflow:hidden;text-align:center;}
+.jedatebox .jedateym{float:left;height:1.4rem; line-height:1.4rem;}
+.jedateym span{width:70%;padding: 0;float:left;text-align: center;text-overflow: ellipsis; display:block;font-size: .42rem}
+.jedateym span input{width:100%;float:left;padding: 0;border:none;background-color:transparent;text-align: center;}
+.jedateym .prev,.jedateym .next{width:15%;height:1.4rem; line-height:1.4rem;float:left;display:block;text-align: center;}
+.jedateym .prev:before{width: 0;height: 0; display:inline-block; border-width: .2rem; border-style: dashed;border-color: transparent;overflow: hidden;border-right-style:solid; border-right-color:#fff;content: "";margin: 0 9px 0 0;
+}
+.jedateym .next:before{width: 0;height: 0; display:inline-block;border-width: .2rem; border-style: dashed;border-color: transparent;overflow: hidden;border-left-style:solid; border-left-color:#fff;content: "";margin: 0 0 0 .2rem;}
+.jedateym .pndrop{width:.4rem;height:.2rem; overflow:hidden;display: inline-block;position:relative;vertical-align: middle;}
+.jedateym .pndrop:before{width: 0;height: 0; display:inline-block;border-width:.18rem; border-style: dashed;border-color: transparent;overflow: hidden;border-top-style:solid; border-top-color:#fff;content: ""; position:absolute; top:0; left:2px;}
+
+.jedatesety,.jedatesetm{width: 100%; position:absolute;left:0; top:40px; bottom:0;background-color: #fff;}
+.jedatesety .ymdropul,.jedatesetm .ymdropul{width:100%;overflow:auto;}
+.jedatesety .ymdropul li{width:33.3%;float:left;text-align: center;height:1rem; line-height:1rem;}
+.jedatesetm .ymdropul li{width:33.3%;float:left;text-align: center;height:1rem; line-height:1rem;}
+.jedatesety .ymdropul li.action,.jedatesetm .ymdropul li.action{background: #ee575b;color:#fff;}
+.jedatetopym p{overflow:auto; padding-top:4px;}
+.jedatetopym p span{width:30%; margin:0 1.1%;background-color: #ee575b;color: #fff;display: block;height:1rem;line-height:1rem;text-align:center;}
+.jedatetopym p span.jedateymchri{background-color: #ECF4FB;color: #1F547E;float:left;font-size: .4rem;}
+.jedatetopym p span.jedateymchle{background-color: #ECF4FB;color: #1F547E;float:left;font-size: .4rem;}
+.jedatetopym p span.jedateymchok{background-color: #ee575b;color:#fff;float:right;font-size: .4rem;}
+
+.jedatebox .jedaym{height:202px;overflow:auto; padding:5px;}
+.jedatebox .jedaym li{width:50%;float:left;text-align: center;height:32px; line-height:32px;}
+.jedatebox .jedaym li.action{background: #ee575b;color:#fff;}
+.jedatebox .jedaol{width:100%;overflow:auto;}
+.jedatebox .jedaul{ padding:0 4px;overflow:auto;}
+.jedatebox .jedaol li,.jedatebox .jedaul li{width:14.28%; float:left; height:1rem; line-height:1rem; text-align:center; font-size: .4rem;}
+.jedatebox .jedaul li{width:14.28%;float:left;}
+.jedatebox .jedaol li.weeks{background:#f5f5f5;border-bottom: 1px solid #ddd;}
+.jedatebox .jedaul li.action{background: #ee575b;color:#fff;}
+.jedatebox .jedaul li.prevdate,.jedatebox .jedaul li.nextdate{color:#cfcfcf;}
+.jedatebox .jedaul li.disabled{ color:#bbb;}
+.jedatebox .jedaul li:nth-child(7n){border-right:none;}
+
+.jedatebot{height:1.4rem;line-height:1.4rem; padding:0 3px 0 5px;overflow:hidden;background:#f5f5f5;}
+.jedatebot .botflex{width:100%;float:left;display:block;margin-bottom:.2rem;padding:.2rem 0; overflow:hidden;}
+.jedatebot .botflex li{width:33.33%; float:left;text-align:center;}
+.jedatebot .botflex li em{width:70%;float:left;padding: 0;border:none;border:1px #ddd solid;background-color: #fff;text-align: center;display:block;height:1rem;line-height:1rem;}
+.jedatebot .botflex li i{width:30%;float:left;height:1rem;line-height:1rem;font-style:normal;display:block;text-align: center;}
+.jedatebot .jedatebtn{text-align:center;font-size: .32rem;}
+.jedatebot .jedatebtn span{float:left; margin:0 1.1%;background-color: #fff;color: #666;display: block;height:1rem;line-height:1rem;text-align:center;
+    -webkit-border-radius: .1rem;
+            border-radius: .1rem;
+}
+.jedatebot .jedatebtn span.jedatetodaymonth{background: #ee575b;color: #fff;}
+.jedateh,.jedatems{width: 100%; position:absolute;left:0; bottom:1rem;background-color: #fff;border-top: 1px solid #ccc;}
+.jedatehmstitle{width:100%;height:35px;line-height:35px;background: #f5f5f5; color:#000;position: relative; overflow:hidden;text-align:center;font-size:.32rem;}
+.jedateh p{width:20%;float:left;text-align: center;height:32px; line-height:32px;}
+.jedatems p{width:10%;float:left;text-align: center;height:32px; line-height:32px;}
+.jedateh p.action,.jedatems p.action{background: #ee575b;color:#fff;}
+.jedatehmsclose{width:30px; height:30px; line-height:26px; text-align:center;position: absolute;top:50%;right:4px; margin-top:-15px;z-index:150;font-size:24px;}
+

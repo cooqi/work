@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	 <meta content="yes" name="apple-mobile-web-app-capable">
+ <meta content="yes" name="apple-touch-fullscreen">
+ <meta content="telephone=no,email=no" name="format-detection">
+ <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+ <meta name="keywords" content="coqoi"/>
+ <title>我的账户--钱婆婆手机版</title>
+ <!-- 忽略页面中的数字识别为电话，忽略email识别 -->
+ <meta name="format-detection" content="telphone=no, email=no"/>
+ <!-- 启用360浏览器的极速模式(webkit) -->
+ <meta name="renderer" content="webkit">
+ <!-- 避免IE使用兼容模式 -->
+ <meta http-equiv="X-UA-Compatible" content="IE=edge">
+ <!-- 不让百度转码 -->
+ <meta http-equiv="Cache-Control" content="no-siteapp" />
+ <!--隱藏底部 iPhone button bar-->
+ <meta name="apple-mobile-web-app-capable" content="yes">
+<!--icon图标-->
+ <link rel="apple-touch-icon" sizes="114x114" href="" />
+<!--定义loading图片-->
+ <link rel="apple-touch-startup-image" href="/startup.png">
+ <script type="text/javascript" src="js/jquery-1.8.0.min.js" ></script>
+ <!--flexible为手机自适应的js插件-->
+ <script type="text/javascript" src="js/flexible.js" ></script>
+ <script type="text/javascript" src="js/flexible_css.js" ></script>
+
+ <link href="css/m_style.css" type="text/css" rel="stylesheet">
+</head>
+<body>
+	<div class="object-head fqa_head">
+    <img src="images/back.png" alt="" class="object-back" onclick='history.go(-1)'>
+     <div class="nav_icon">
+      <span class="record"><a href="http://www.qianpopo.com.cn/_hq/qpp_phone_web/individual_withdrawal-record.html">提现记录</a></span>     
+     </div>
+     <p>提现</p>
+ </div>
+
+  <div class="individual-cztx withdrawal">
+    <form action="">
+      <ul>
+        <li><span>银行卡号：</span><input type="text" readonly="readonly" value="6222******838"></li>
+        <li><span>真实姓名：</span><input type="text" readonly="readonly" value="李明"></li>
+        <li><span>绑定手机：</span><input type="text" readonly="readonly" value="1355142568"></li>
+        <li><span>到账时间：</span><input type="text" readonly="readonly" value="72小时内（银行原因，各有不同）"></li>
+        <li><span>提现金额：￥</span><input type="text" name="ref-sum"></li>
+        <li><span>支付密码：</span><input type="text" name="paykey" placeholder="请输入支付密码"></li>
+      </ul>
+      <input type="submit" value="立即提现">
+    </form>
+  </div>
+    <script>
+     $('input[type="submit"]').click(function(){
+      var refsum=$('input[name="ref-sum"]').val();
+      var paykey=$('input[name="paykey"]').val();
+      if(refsum==''){
+        alert('请输入提现金额')
+        return false;
+      }
+
+      if(paykey==''){
+        alert('请输入支付密码')
+        return false;
+      }
+     })
+      
+     
+      
+    </script>
+</body>
+</html>

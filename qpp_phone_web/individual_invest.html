@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	 <meta content="yes" name="apple-mobile-web-app-capable">
+ <meta content="yes" name="apple-touch-fullscreen">
+ <meta content="telephone=no,email=no" name="format-detection">
+ <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+ <meta name="keywords" content="coqoi"/>
+ <title>投资管理--钱婆婆手机版</title>
+ <!-- 忽略页面中的数字识别为电话，忽略email识别 -->
+ <meta name="format-detection" content="telphone=no, email=no"/>
+ <!-- 启用360浏览器的极速模式(webkit) -->
+ <meta name="renderer" content="webkit">
+ <!-- 避免IE使用兼容模式 -->
+ <meta http-equiv="X-UA-Compatible" content="IE=edge">
+ <!-- 不让百度转码 -->
+ <meta http-equiv="Cache-Control" content="no-siteapp" />
+ <!--隱藏底部 iPhone button bar-->
+ <meta name="apple-mobile-web-app-capable" content="yes">
+<!--icon图标-->
+ <link rel="apple-touch-icon" sizes="114x114" href="" />
+<!--定义loading图片-->
+ <link rel="apple-touch-startup-image" href="/startup.png">
+ <script type="text/javascript" src="js/jquery-1.8.0.min.js" ></script>
+ <!--flexible为手机自适应的js插件-->
+ <script type="text/javascript" src="js/flexible.js" ></script>
+ <script type="text/javascript" src="js/flexible_css.js" ></script>
+
+ <link href="css/m_style.css" type="text/css" rel="stylesheet">
+</head>
+<body>
+	<div class="object-head fqa_head">
+    <img src="images/back.png" alt="" class="object-back" onclick='history.go(-1)'>
+     <p>投资管理</p>
+ </div>
+
+  <div class="individual-invest">
+    <dl class="invest-tab">
+      <dd class="act">回收中</dd>
+      <dd>已回收</dd>
+      <dd>可转让</dd>
+      <dd>转出中</dd>
+    </dl>
+
+    <div class="invest-manage recycle recycle-ing">
+      <table>
+        <tr>
+          <th>借款标号</th>
+          <th>借款人</th>
+          <th>年利率化</th>
+          <th>投资金额</th>
+          <th>已还本息</th>
+          <th>还款中</th>
+        </tr>
+        <tr>
+          <td>竞标保</td>
+          <td>qianpopo123</td>
+          <td>12%</td>
+          <td>3000</td>
+          <td>0</td>
+          <td>0/1</td>
+        </tr>
+      </table>
+    </div>
+
+    <div class="invest-manage recycle recycle-has" style="display: none;">
+      <table>
+        <tr>
+          <th>借款标号</th>
+          <th>借款人</th>
+          <th>年利率化</th>
+          <th>已收本金</th>
+          <th>已收利息</th>
+        </tr>
+        <tr>
+          <td>25</td>
+          <td>alfhjhjkl</td>
+          <td>12%</td>
+          <td>300</td>
+          <td>9</td>
+        </tr>
+        <tr>
+          <td>26</td>
+          <td>fajihkl</td>
+          <td>12%</td>
+          <td>500</td>
+          <td>20</td>
+        </tr>
+      </table>
+    </div>
+
+    <div class="invest-manage transfer" style="display: none;">
+      <div class="transfer-list">
+        <dl class="list-title">
+          <dd class="transfer-obj">竞标保16523</dd>
+          <dd class="transfer-time">16-02-23 03:22 ~ 16-04-02 11:59</dd>
+        </dl>
+        <div class="transfer-info">
+        <table>
+          <tr>
+            <td>借款者：skajfhlkajfh</td>
+            <td class="dsbj">待收本金：<span>￥3000</span></td>
+            <td>待收利息<span>￥30</span></td>
+          </tr>
+          <tr>
+            <td>利&nbsp;&nbsp;&nbsp;率：12%</td>
+            <td>还款期数：0/1</td>
+            <td></td>
+          </tr>
+        </table>
+        <p class="apply-transfer">申请转让</p>
+        </div>
+      </div>
+
+      <div class="transfer-list">
+        <dl class="list-title">
+          <dd class="transfer-obj">竞标保22222</dd>
+          <dd class="transfer-time">16-02-23 03:22 ~ 16-04-02 11:59</dd>
+        </dl>
+        <div class="transfer-info">
+        <table>
+          <tr>
+            <td>借款者：skajfhlkajfh</td>
+            <td class="dsbj">待收本金：<span>￥7000</span></td>
+            <td>待收利息<span>￥30</span></td>
+          </tr>
+          <tr>
+            <td>利&nbsp;&nbsp;&nbsp;率：12%</td>
+            <td>还款期数：0/1</td>
+            <td></td>
+          </tr>
+        </table>
+        <p class="apply-transfer">申请转让</p>
+        </div>
+      </div>
+
+    </div><!--可转让-->
+
+    <div class="invest-manage transfer" style="display: none;">
+      <div class="transfer-list">
+        <dl class="list-title">
+          <dd class="transfer-obj">竞标保16523</dd>
+          <dd class="transfer-time">16-02-23 03:22 ~ 16-04-02 11:59</dd>
+        </dl>
+        <div class="transfer-info">
+        <table>
+          <tr>
+            <td>借款者：skajfhlkajfh</td>
+            <td>待收本金：<span>￥3000</span></td>
+          </tr>
+          <tr>
+            <td>利&nbsp;&nbsp;&nbsp;率：12%</td>
+            <td>还款期数：0/1</td>
+          </tr>
+        </table>
+         <p class="undo-transfer">撤销</p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!--//******弹出内容******//-->
+  <!--申请转让-->
+  <div class="pop-up apply-box" style="display: none;">
+    <div class="box-info transfer-box">
+      <ul>
+        <li>转让的债权：<input type="text" readonly="readonly" name="zrzq"></li>
+        <li>最高转让价格：<input type="text" readonly="readonly" name="zgjg"></li>
+        <li>转让手续费：￥<input type="text" id="sxf" name="sxf" readonly="readonly"><span>（转让价格的2%）</span></li>
+        <li>转让价格：￥<input type="text" id="zc-price" name="zc-price"></li>
+        <li>支付密码：<input type="text" id="paykey" name="paykey"></li>
+      </ul>
+      <dl>
+          <dd>
+              <span class="cancel">取消</span>
+          </dd>
+          <dd>
+              <span class="det surezr">转让</span>
+          </dd>
+      </dl>
+    </div>
+  </div>
+  
+  <!--撤回-->
+  <div class="pop-up undo-box" style="display: none;">
+   <div class="box-info transfer-box">
+   <ul>
+     <li>撤销的债权：<input type="text" readonly="readonly" name="undo-obj"></li>
+     <li>支付密码：<input type="text" name="paypassword"></li>
+   </ul>
+     <p class="transfer-tips">* 债权转让只能转让三次，三次后不能再转让</p>
+     <dl>
+          <dd>
+              <span class="cancel">取消</span>
+          </dd>
+          <dd>
+              <span class="det surecx">撤销</span>
+          </dd>
+      </dl>
+      </div>
+  </div>
+
+    <script>
+
+    $(function(){
+          //tab
+    $(".invest-tab dd").click(function(){
+               $(this).addClass("act").siblings().removeClass("act");
+               var i=$(this).index();
+               $('.invest-manage:eq('+i+')').show().siblings(".invest-manage").hide()
+            })
+
+
+     //申请转让
+    $('.apply-transfer').click(function(){
+      var transferObj=$(this).parents().siblings('.list-title').children('.transfer-obj').text();//转让债权的名称
+      var maxPrice=$(this).siblings('table').find('td.dsbj').children('span').text();//待收本金，也就是最高转让价格
+      $('input[name="zrzq"]').val(transferObj);
+      $('input[name="zgjg"]').val(maxPrice);
+      $('.apply-box').show()
+    })
+
+    //计算转让手续费
+    $('input[name="zc-price"]').blur(function(){
+      var zcprice=$('input[name="zc-price"]').val();
+      var sxf=zcprice*0.02;
+      var maxprice=$('input[name="zgjg"]').val();
+      maxprice =parseInt(maxprice.replace(/^￥/,''));
+      if(zcprice>maxprice){
+        alert('最高转让价格为：'+maxprice+'，请确认后重新填写' )
+        $('input[name="zc-price"]').val('');
+        $('input[name="sxf"]').val('')
+      }else{
+        $('input[name="sxf"]').val(sxf);
+      }
+      
+    })
+    
+    //确定转让
+     $('.surezr').click(function(){
+         var zrjg=$('input[name="zc-price"]').val();//转让价格
+         var zfmm=$('input[name="paykey"]').val();//支付密码
+         if(zrjg==''){
+          alert('请填写转让价格')
+          return false;    
+          }
+          if(zfmm==''){
+          alert('请填写支付密码')
+          return false;    
+          }
+          //如何去判断支付密码的正确前端无法完成
+     })
+         
+   //撤销转让
+     $('.undo-transfer').click(function(){
+      var undoObj=$(this).parents().siblings('.list-title').children('.transfer-obj').text();//转让债权的名称
+      $('input[name="undo-obj"]').val(undoObj);
+      $('.undo-box').show()
+    })
+
+  //确认撤销
+  $('.surecx').click(function(){
+         var paypassword=$('input[name="paypassword"]').val();//支付密码
+          if(paypassword==''){
+          alert('请填写支付密码')
+          return false;    
+          }
+          //如何去判断支付密码的正确前端无法完成
+     })
+
+    /***取消确定***/
+      $('span.cancel').click(function(){
+             $(this).parents('.pop-up').hide();
+      })//取消，关闭弹出框
+
+     }) 
+
+    
+  </script>
+</body>
+</html>

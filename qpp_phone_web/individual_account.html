@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	 <meta content="yes" name="apple-mobile-web-app-capable">
+ <meta content="yes" name="apple-touch-fullscreen">
+ <meta content="telephone=no,email=no" name="format-detection">
+ <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+ <meta name="keywords" content="coqoi"/>
+ <title>我的账户--钱婆婆手机版</title>
+ <!-- 忽略页面中的数字识别为电话，忽略email识别 -->
+ <meta name="format-detection" content="telphone=no, email=no"/>
+ <!-- 启用360浏览器的极速模式(webkit) -->
+ <meta name="renderer" content="webkit">
+ <!-- 避免IE使用兼容模式 -->
+ <meta http-equiv="X-UA-Compatible" content="IE=edge">
+ <!-- 不让百度转码 -->
+ <meta http-equiv="Cache-Control" content="no-siteapp" />
+ <!--隱藏底部 iPhone button bar-->
+ <meta name="apple-mobile-web-app-capable" content="yes">
+<!--icon图标-->
+ <link rel="apple-touch-icon" sizes="114x114" href="" />
+<!--定义loading图片-->
+ <link rel="apple-touch-startup-image" href="/startup.png">
+ <script type="text/javascript" src="js/jquery-1.8.0.min.js" ></script>
+ <!--flexible为手机自适应的js插件-->
+ <script type="text/javascript" src="js/flexible.js" ></script>
+ <script type="text/javascript" src="js/flexible_css.js" ></script>
+
+ <link href="css/m_style.css" type="text/css" rel="stylesheet">
+</head>
+<body>
+	<div class="object-head fqa_head">
+    <img src="images/back.png" alt="" class="object-back" onclick='history.go(-1)'>
+     <div class="nav_icon">
+      <span class="sign">签到</span>  
+     </div>
+     <p>我的账户</p>
+ </div>
+
+ <!--签到成功提示-->
+      <div class="sign-box" style="display: none;">
+       <div class="sign-succeed">
+        <h3>签到成功！</h3>
+        <h4>投资积分<span>+1</span></h4>
+        <i class="close-sign"></i>
+       </div>
+     </div>
+
+     <script>
+     //显示隐藏
+         function signhide(){
+            $('.sign-box').hide();
+         }
+
+       $('.sign').click(function(){
+        if($(this).text()=="签到"){//判断是否签到
+          $(this).text("已签到");
+          $('.sign-box').show();
+         //定时，3秒后自动关闭弹出框
+         setTimeout("signhide()", 2000);
+        } 
+       })
+
+       $('.close-sign').click(function(){
+         signhide()
+       })
+      
+      
+
+
+     </script>
+<!--签到成功提示-->
+
+  <div class="individual_account">
+    <div class="acc_information">
+      <div class="head_portrait">
+            <img src="images/head_portrait.png" alt="">
+      </div>
+
+      <div class="data">
+         <p>用户名： Qianpopo <span class="log-out">退出</span></p>
+        <dl>
+          <dd>投资等级：1</dd>
+          <dd>信用等级：A</dd>
+          <dd>积分：100000</dd>
+        </dl>
+        <ul>
+          <li class="certified_realName realName_have"><i></i></li>
+          <li class="certified_phone phone_have"><i></i></li>
+          <li class="certified_email"><i></i></li><!-- class加上 email_have 为认证后的图标-->
+          <li class="vip"><i></i></li> <!-- class加上 vip_have 为认证后的图标-->
+          <li class="pay_password"><i></i></li> <!-- class加上 password_have 为认证后的图标-->
+        </ul>
+      </div>
+    </div><!--用户信息-->
+
+        <div class="pup-box user-logout" style="display: none">
+        <div class="boxbg"></div>
+        <div class="del-tips">
+          <p>您确定要退出钱婆婆账户吗？</p>
+           <dl>
+             <dd class="del-sure">确定</dd>
+             <dd class="del-cancel">取消</dd>
+           </dl>
+        </div>
+       </div>
+       <script>
+       //确定退出
+         $('.log-out').click(function(){
+          $('.pup-box').show();
+         })
+         //取消
+      $('.del-cancel').click(function(){
+        $('.pup-box').hide();
+      })
+       </script>
+
+    <div class="acc_balance">
+      <dl>
+        <dd>账户余额：￥1000</dd>
+        <dd><a href="javascript:;" class="payfor">充值</a></dd>
+        <dd><a href="http://www.qianpopo.com.cn/_hq/qpp_phone_web/individual_withdrawal.html">提现</a></dd>
+      </dl>
+       
+      <ul>
+        <li>
+          <h3>收入总额</h3>
+          <p>￥5000000.00</p>
+        </li>
+        <li>
+          <h3>支出总额</h3>
+          <p>￥50000.00</p>
+        </li>
+        <li>
+          <h3>待收总额</h3>
+          <p>￥50000.00</p>
+        </li>
+        <li>
+          <h3>待还总额</h3>
+          <p>￥50000.00</p>
+        </li>
+      </ul>
+    </div><!--账户余额-->
+
+<!--充值弹出框-->
+       <div class="pop-up payway" style="display: none;">
+         <div class="paychange">
+           <h3>充值方式</h3>
+           <dl>
+             <dd><a href="">快捷充值</a></dd>
+             <dd><a href="">线下充值</a></dd>
+           </dl>
+           <p class="quxiao">取消</p>
+         </div>
+       </div>
+       <script>
+       //激活active
+           document.body.addEventListener('touchstart', function() {}, false);
+
+       //弹出框显示隐藏
+         $('.payfor').click(function(){
+             $('.payway').show();
+         })
+         $('.quxiao,.payway').click(function(){
+             $('.payway').hide();
+         })
+       </script>
+<!--充值弹出框 end-->
+
+    <div class="acc_management">
+      <ul>
+        <li>
+          <a href="http://www.qianpopo.com.cn/_hq/qpp_phone_web/individual_set.html"><img src="images/jbsz.png" alt=""></a>
+          <p><a href="http://www.qianpopo.com.cn/_hq/qpp_phone_web/individual_set.html">基本设置</a></p>
+        </li>
+        <li>
+          <a href="http://www.qianpopo.com.cn/_hq/qpp_phone_web/individual_funds.html"><img src="images/zjgl.png" alt=""></a>
+          <p><a href="http://www.qianpopo.com.cn/_hq/qpp_phone_web/individual_funds.html">资金管理</a></p>
+        </li>
+        <li>
+          <a href="http://www.qianpopo.com.cn/_hq/qpp_phone_web/individual_invest.html"><img src="images/tzgl.png" alt=""></a>
+          <p><a href="http://www.qianpopo.com.cn/_hq/qpp_phone_web/individual_invest.html">投资管理</a></p>
+        </li>
+        <li>
+         <a href="http://www.qianpopo.com.cn/_hq/qpp_phone_web/individual_borrowing.html"> <img src="images/jkgl.png" alt=""></a>
+          <p><a href="http://www.qianpopo.com.cn/_hq/qpp_phone_web/individual_borrowing.html">借款管理</a></p>
+        </li>
+        <li>
+          <a href="http://www.qianpopo.com.cn/_hq/qpp_phone_web/individual_accountBank.html"><img src="images/yhzh.png" alt=""></a>
+          <p><a href="http://www.qianpopo.com.cn/_hq/qpp_phone_web/individual_accountBank.html">银行账户</a></p>
+        </li>
+        <li>
+         <a href="http://www.qianpopo.com.cn/_hq/qpp_phone_web/individual_automaticBid.html"> <img src="images/zdtb.png" alt=""></a>
+         <p><a href="http://www.qianpopo.com.cn/_hq/qpp_phone_web/individual_automaticBid.html">自动投标</a></p>
+        </li>
+        <li>
+          <a href="http://www.qianpopo.com.cn/_hq/qpp_phone_web/activity_list.html"><img src="images/zxhd.png" alt=""></a>
+          <p><a href="http://www.qianpopo.com.cn/_hq/qpp_phone_web/activity_list.html">最新活动</a></p>
+        </li>
+        <li>
+          <a href="http://www.qianpopo.com.cn/_hq/qpp_phone_web/individual_notice.html"  class="xxtz">
+          <img src="images/xxtz.png" alt="">
+          <span style="display: block;">2</span><!--如果有消息通知则显示-->
+          </a>
+          <p><a href="http://www.qianpopo.com.cn/_hq/qpp_phone_web/individual_notice.html">消息通知</a></p>
+        </li>
+        <li>
+          <a href="http://www.qianpopo.com.cn/_hq/qpp_phone_web/individual_integral.html"><img src="images/jfjl.png" alt=""></a>
+          <p><a href="http://www.qianpopo.com.cn/_hq/qpp_phone_web/individual_integral.html">积分记录</a></p>
+        </li>
+        <li>
+          <a href="http://qianpopo.com.cn/_hq/qpp_phone_web/individual_invite.html"><img src="images/yqyj.png" alt=""></a>
+          <p><a href="http://qianpopo.com.cn/_hq/qpp_phone_web/individual_invite.html">邀请有奖</a></p>
+        </li>
+      </ul>
+    </div><!--账户管理-->
+  </div>
+    
+</body>
+</html>

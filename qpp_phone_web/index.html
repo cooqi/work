@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	 <meta content="yes" name="apple-mobile-web-app-capable">
+ <meta content="yes" name="apple-touch-fullscreen">
+ <meta content="telephone=no,email=no" name="format-detection">
+ <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+ <meta name="keywords" content="coqoi"/>
+<title>钱婆婆手机版</title>
+ <!-- 忽略页面中的数字识别为电话，忽略email识别 -->
+ <meta name="format-detection" content="telphone=no, email=no"/>
+ <!-- 启用360浏览器的极速模式(webkit) -->
+ <meta name="renderer" content="webkit">
+ <!-- 避免IE使用兼容模式 -->
+ <meta http-equiv="X-UA-Compatible" content="IE=edge">
+ <!-- 不让百度转码 -->
+ <meta http-equiv="Cache-Control" content="no-siteapp" />
+ <!--隱藏底部 iPhone button bar-->
+ <meta name="apple-mobile-web-app-capable" content="yes">
+<!--icon图标-->
+ <link rel="apple-touch-icon" sizes="114x114" href="" />
+<!--定义loading图片-->
+ <link rel="apple-touch-startup-image" href="/startup.png">
+ <script type="text/javascript" src="js/jquery-1.8.0.min.js" ></script>
+ <!--flexible为手机自适应的js插件-->
+ <script type="text/javascript" src="js/flexible.js" ></script>
+ <script type="text/javascript" src="js/flexible_css.js" ></script>
+
+ <link href="css/m_style.css" type="text/css" rel="stylesheet">
+
+	
+</head>
+<body>
+    <!--head-->
+	<div class="head">
+		<img src="images/logo.png" alt="" class="logo">
+		<ul class="login">
+			<li><a href="http://www.qianpopo.com.cn/_hq/qpp_phone_web/login.html">登录</a></li><!--如果已登录，则直接进入个人中心-->
+			<li class="sign-in"><a href="#">签到</a></li>
+			<li><a href="http://www.qianpopo.com.cn/_hq/qpp_phone_web/register.html">注册</a></li>
+		</ul>
+	</div><!--head end-->
+
+     <!--签到成功提示-->
+      <div class="sign-box" style="display: none;">
+       <div class="sign-succeed">
+        <h3>签到成功！</h3>
+        <h4>投资积分<span>+1</span></h4>
+        <i class="close-sign"></i>
+       </div>
+     </div>
+
+     <script>
+     //显示隐藏
+         function signhide(){
+            $('.sign-box').hide();
+         }
+
+       $('.sign-in').click(function(){
+        if($(this).text()=="签到"){//判断是否签到
+            $(this).text("已签到");
+          $('.sign-box').show();
+         //定时，3秒后自动关闭弹出框
+         setTimeout("signhide()", 2000);
+        } 
+       })
+
+       $('.close-sign').click(function(){
+         signhide()
+       })
+
+     </script>
+<!--签到成功提示-->
+
+
+	<!-- 手机滑动幻灯片代码 开始 -->
+<div class="main_visual">
+    <div class="flicking_con">
+        <a href="#">1</a>
+        <a href="#">2</a>
+        <a href="#">3</a>
+    </div>
+    <div class="main_image">
+        <ul>
+            <li><span class="img_1"></span></li>
+            <li><span class="img_2"></span></li>
+            <li><span class="img_3"></span></li>       
+        </ul>
+        <a href="javascript:;" id="btn_prev"></a>
+        <a href="javascript:;" id="btn_next"></a>
+    </div>
+</div>
+<script type="text/javascript" src="js/jquery.event.drag-1.5.min.js"></script>
+<script type="text/javascript" src="js/jquery.touchSlider.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){
+
+    $(".main_visual").hover(function(){
+        $("#btn_prev,#btn_next").fadeIn()
+    },function(){
+        $("#btn_prev,#btn_next").fadeOut()
+    });
+    
+    $dragBln = false;
+    
+    $(".main_image").touchSlider({
+        flexible : true,
+        speed : 300,
+        btn_prev : $("#btn_prev"),
+        btn_next : $("#btn_next"),
+        paging : $(".flicking_con a"),
+        counter : function (e){
+            $(".flicking_con a").removeClass("on").eq(e.current-1).addClass("on");
+        }
+    });
+    
+    $(".main_image").bind("mousedown", function() {
+        $dragBln = false;
+    });
+    
+    $(".main_image").bind("dragstart", function() {
+        $dragBln = true;
+    });
+    
+    $(".main_image a").click(function(){
+        if($dragBln) {
+            return false;
+        }
+    });
+    
+    timer = setInterval(function(){
+        $("#btn_next").click();
+    }, 6000);
+    
+    $(".main_visual").hover(function(){
+        clearInterval(timer);
+    },function(){
+        timer = setInterval(function(){
+            $("#btn_next").click();
+        },6000);
+    });
+    
+    $(".main_image").bind("touchstart",function(){
+        clearInterval(timer);
+    }).bind("touchend", function(){
+        timer = setInterval(function(){
+            $("#btn_next").click();
+        }, 6000);
+    });
+    
+});
+</script>
+<!-- 手机滑动幻灯片代码 end -->
+
+<!--单行滚动文字-->
+<div class="shell"> 
+<span></span>
+<div id="div1"> 
+<a href="#">请教高手帮我看下这段代码 FLASH显示不了</a> 
+<a href="#">corange.cn网页技术代码 </a> 
+<a href="#">jquery做的一个滑动效果,不知如何增加延迟,现在太灵</a> 
+<a href="#">技术研究-QQ09版按钮渐显渐隐的由来 </a> 
+<a href="#">javascript读取Json数据并分页显示，支持键盘和</a> 
+<a href="#">腾讯网奇怪的PNG文件，拜师以求解惑</a> 
+<a href="#">更新lhgdialog-ver2.0.1弹出窗口组件 2009-7-18 </a> 
+</div> 
+</div> 
+<script> 
+var box=document.getElementById("div1"),can=true; 
+box.innerHTML+=box.innerHTML; 
+box.onmouseover=function(){can=false}; 
+box.onmouseout=function(){can=true}; 
+new function (){ 
+var stop=box.scrollTop%50==0&&!can; 
+if(!stop)box.scrollTop==parseInt(box.scrollHeight/2)?box.scrollTop=0:box.scrollTop++; 
+setTimeout(arguments.callee,box.scrollTop%50?10:900); 
+}; 
+</script> 
+<!--单行滚动文字 end-->
+
+     
+     <!--center_main-->
+	<div class="center_main">
+	<!--近期标的-->
+		<div class="recent_object">
+			<h3>近期标的</h3>
+			<div class="recent_object_list">
+				<div class="object_title">
+					<p><a href="http://www.qianpopo.com.cn/_hq/qpp_phone_web/objiect-details.html">竞标保16010</a></p>
+					<img src="images/diya.png" alt="" class="object_dyimg">
+					<div class="obj_iconimg">
+					<img src="images/dan.png" alt="">
+					</div>
+				</div>
+				<div class="object_details">
+					<div class="left_information">
+						<h4><span>12.00%</span>年化收益率</h4>
+						<table>
+							<tr>
+								<td>投资总额：<span>30.00万元</span></td>
+								<td>起投金额：<span>100元</span></td>
+							</tr>
+							<tr>
+								<td>投资期限：<span>1个月</span></td>
+								<td>还款方式：<span>一次性还款</span></td>
+							</tr>
+						</table>
+					</div><!--left-->
+					<div class="right_state">
+					    <!--圆环进度条的实现代码-->
+                    <div class="circle" style="left:0">
+                        <div class="pie_left"><div class="left"></div></div>
+                        <div class="pie_right"><div class="right"></div></div>
+                        <div class="mask"><span>100</span>%</div>
+                    </div>                 
+                  <!--圆环进度条的实现代码 end-->
+						<p href="#" class="state_buttom" id="complete">已还款</p>
+					</div><!--right-->
+				</div>
+			</div><!--list-->
+
+			<div class="recent_object_list">
+				<div class="object_title">
+					<p>竞标保16010</p>
+					<img src="images/zhiya.png" alt="" class="object_dyimg">
+					<div class="obj_iconimg">
+					<img src="images/tian.png" alt="">
+					<img src="images/xin.png" alt="">
+					</div>
+				</div>
+				<div class="object_details">
+					<div class="left_information">
+						<h4><span>12.00%</span>年化收益率</h4>
+						<table>
+							<tr>
+								<td>投资总额：<span>30.00万元</span></td>
+								<td>起投金额：<span>100元</span></td>
+							</tr>
+							<tr>
+								<td>投资期限：<span>1个月</span></td>
+								<td>还款方式：<span>一次性还款</span></td>
+							</tr>
+						</table>
+					</div><!--left-->
+					<div class="right_state">
+					    <!--圆环进度条的实现代码-->
+                    <div class="circle" style="left:0">
+                        <div class="pie_left"><div class="left"></div></div>
+                        <div class="pie_right"><div class="right"></div></div>
+                        <div class="mask"><span>30</span>%</div>
+                    </div>                 
+                  <!--圆环进度条的实现代码 end-->
+						<p href="#" class="state_buttom" id="ongoing">还款中</p>
+					</div><!--right-->
+				</div>
+			</div><!--list-->
+
+			<div class="recent_object_list">
+				<div class="object_title">
+					<p>竞标保16010</p>
+					<img src="images/diya.png" alt="" class="object_dyimg">
+					<div class="obj_iconimg">
+					<img src="images/di.png" alt="">
+					</div>
+				</div>
+				<div class="object_details">
+					<div class="left_information">
+						<h4><span>12.00%</span>年化收益率</h4>
+						<table>
+							<tr>
+								<td>投资总额：<span>30.00万元</span></td>
+								<td>起投金额：<span>100元</span></td>
+							</tr>
+							<tr>
+								<td>投资期限：<span>1个月</span></td>
+								<td>还款方式：<span>一次性还款</span></td>
+							</tr>
+						</table>
+					</div><!--left-->
+					<div class="right_state">
+					    <!--圆环进度条的实现代码-->
+                    <div class="circle" style="left:0">
+                        <div class="pie_left"><div class="left"></div></div>
+                        <div class="pie_right"><div class="right"></div></div>
+                        <div class="mask"><span>0</span>%</div>
+                    </div>                 
+                  <!--圆环进度条的实现代码 end-->
+						<p href="#" class="state_buttom" id="ongoing">待还款</p>
+					</div><!--right-->
+				</div>
+			</div><!--list-->
+
+			<script type="text/javascript">
+                        $(function() {          
+                           $('.circle').each(function(index, el) {
+                                var num = $(this).find('span').text() * 3.6;
+                                if (num<=180) {
+                                    $(this).find('.right').css('transform', "rotate(" + num + "deg)");
+                                } else {
+                                    $(this).find('.right').css('transform', "rotate(180deg)");
+                                    $(this).find('.left').css('transform', "rotate(" + (num - 180) + "deg)");
+                                };
+                            });
+                        });
+                    </script><!--状态圆环js-->
+
+
+                    <p class="more_object"><a href="http://www.qianpopo.com.cn/_hq/qpp_phone_web/allObject.html">查看更多标的</a></p>
+		</div><!--近期标的 end--> 
+
+       <a href="#"><img src="images/ad01.png" alt="" class="ad_index"></a><!--广告-->
+       
+       <!--投资排行-->
+       <div class="investment_ranking">
+       <h3>投资排行<span class="more-rank"><a href="">更多</a></span></h3>
+       	 <!-- tab -->
+<div id="tab-list">
+    <ul id="ul1">
+        <li class="active">总排名</li><li>月排名</li>
+    </ul>
+    <div>
+        <dl class="rank_title">
+        	<dd>排名</dd>
+        	<dd>用户名</dd>
+        	<dd>投资金额</dd>
+        </dl>
+        <dl class="rank_list">
+        	<dd class="rank_user_rank">&nbsp</dd>
+        	<dd class="rank_user_name">me***u</dd>
+        	<dd class="rank_user_money">￥9556000.00</dd>
+        </dl>
+        <dl class="rank_list">
+        	<dd class="rank_user_rank">&nbsp</dd>
+        	<dd class="rank_user_name">me***u</dd>
+        	<dd class="rank_user_money">￥9556000.00</dd>
+        </dl>
+        <dl class="rank_list">
+        	<dd class="rank_user_rank">&nbsp</dd>
+        	<dd class="rank_user_name">me***u</dd>
+        	<dd class="rank_user_money">￥9556000.00</dd>
+        </dl>
+        <dl class="rank_list">
+        	<dd class="rank_user_rank">&nbsp</dd>
+        	<dd class="rank_user_name">me***u</dd>
+        	<dd class="rank_user_money">￥9556000.00</dd>
+        </dl>
+        <dl class="rank_list">
+        	<dd class="rank_user_rank">&nbsp</dd>
+        	<dd class="rank_user_name">me***u</dd>
+        	<dd class="rank_user_money">￥9556000.00</dd>
+        </dl>
+    </div> 
+
+    <div class="hide">
+       <dl class="rank_title">
+        	<dd>排名</dd>
+        	<dd>用户名</dd>
+        	<dd>投资金额</dd>
+        </dl>
+        <dl class="rank_list">
+        	<dd class="rank_user_rank">&nbsp;</dd>
+        	<dd class="rank_user_name">me***yu</dd>
+        	<dd class="rank_user_money">￥9556.00</dd>
+        </dl>
+        <dl class="rank_list">
+        	<dd class="rank_user_rank">&nbsp;</dd>
+        	<dd class="rank_user_name">me***yu</dd>
+        	<dd class="rank_user_money">￥9556.00</dd>
+        </dl>
+        <dl class="rank_list">
+        	<dd class="rank_user_rank">&nbsp;</dd>
+        	<dd class="rank_user_name">me***yu</dd>
+        	<dd class="rank_user_money">￥9556.00</dd>
+        </dl>
+        <dl class="rank_list">
+        	<dd class="rank_user_rank">&nbsp;</dd>
+        	<dd class="rank_user_name">me***u</dd>
+        	<dd class="rank_user_money">￥9556000.00</dd>
+        </dl>
+        <dl class="rank_list">
+        	<dd class="rank_user_rank">&nbsp;</dd>
+        	<dd class="rank_user_name">me***u</dd>
+        	<dd class="rank_user_money">￥9556000.00</dd>
+        </dl>
+    </div>    
+</div>
+<script type="text/javascript">
+         
+    window.onload = function() {
+        var oUl1 = document.getElementById("ul1");
+        var aLi = oUl1.getElementsByTagName("li");
+        var oDiv = document.getElementById("tab-list");
+        var aDiv = oDiv.getElementsByTagName("div");
+        for(var i = 0; i < aLi.length; i++) {
+            aLi[i].index = i;
+            aLi[i].onmouseover = function() {
+                for(var i = 0; i < aLi.length; i++) {
+                    aLi[i].className = "";
+                }
+                this.className = "active";
+                for(var j = 0; j < aDiv.length; j++) {
+                    aDiv[j].className = "hide";
+                }
+                aDiv[this.index].className = "show";
+            }        
+        }
+    }
+    
+    
+    </script>
+
+    <!--tab end-->       
+        <p class="more_ranking"><a href="#">查看更多排行</a></p>
+       </div><!--投资排行 end-->   
+	</div><!--center_main end-->
+
+<a href="#"><img src="images/ad02.png" alt="" class="ad_index"></a><!--广告-->
+
+
+	<!--foot-->
+	<div class="foot">
+		<h4>上市背景<span>•</span>运作规范<span>•</span>安全透明<span>•</span>本息保障</h4>
+		<ul class="foot_nav">
+			<li><a href="http://www.qianpopo.com.cn/_hq/qpp_phone_web/aboutus.html">关于我们</a></li>
+			<li><a href="http://www.qianpopo.com.cn/_hq/qpp_phone_web/security.html">安全保障</a></li>
+			<li><a href="http://www.qianpopo.com.cn/_hq/qpp_phone_web/FQA.html">常见问题</a></li>
+		</ul>
+          <p>&copy;2014-2015 亿房金融&亿房财富 鄂ICP备15000779-2号</p>
+	</div><!--foot end-->
+
+	<a href="#"><img src="images/kf.png" class="kf"></a><!--客服-->
+</body>
+</html>

@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script type="text/javascript" src="js/jquery-1.8.0.min.js"></script>
+	<script type="text/javascript" src="js/jquery.showMore-rank.js"></script>
+	<style>
+     .rank-details-pc{width: 100%;border:1px solid #ccc;}
+     .rank-details-pc *{box-sizing: border-box;}
+     .rank-details-pc dd,.rank-details-pc ul,.rank-details-pc li{margin:0;padding: 0}
+     .rank-details-pc #ul1{border-bottom: 1px solid #ccc;height: 50px;font-size: 0;overflow: hidden;}
+     .rank-details-pc #ul1 li{line-height: 50px;width: 50%;text-align: center;font-size: 16px;display: inline-block;color: #333;cursor: pointer;}
+     .rank-details-pc #ul1 li.active{background: #5392be;color: #fff;}
+     .rank-details-pc .tab{width: 100%;}
+     .rank-details-pc .tab dl{overflow: hidden;font-size: 0;height: 40px;}
+     .rank-details-pc .tab .list dl:hover{background: #f2f2f2;cursor: pointer;}
+     .rank-details-pc .tab .list dl:first-child,.rank-details-pc .tab .list dl:first-child:hover{background: rgba(255, 217, 0, 0.3);}
+     .rank-details-pc .tab .list dl:nth-child(2),.rank-details-pc .tab .list dl:nth-child(2):hover{background: rgba(191, 191, 191, 0.3);} 
+     .rank-details-pc .tab dl dd{display: inline-block;width: 33.33%;text-align: center;;line-height: 40px;font-size: 14px;color: #666;}
+     .rank-details-pc .tab dl.rank_title dd{font-size: 16px;color: #999}
+     .rank-details-pc .tab .more_ranking{width: 200px;height: 35px;text-align: center;line-height: 35px;font-size: 14px;border:1px solid #fc3;color:#fc3 ;cursor: pointer;margin:20px auto;}
+	</style>
+</head>
+<body>
+		       	 <!-- tab -->
+<div class="rank-details-pc">       	 
+    <ul id="ul1">
+        <li class="active">总排名</li><li>月排名</li>
+    </ul>
+    <div class="tab">
+        <dl class="rank_title">
+        	<dd>排名</dd>
+        	<dd>用户名</dd>
+        	<dd>投资金额</dd>
+        </dl>
+        <div id="list" pagesize="15" class="list">
+        <dl class="rank_lis">
+        	<dd class="rank_user_rank">1</dd>
+        	<dd class="rank_user_name">me***u</dd>
+        	<dd class="rank_user_money">￥9556000.00</dd>
+        </dl>
+        <dl class="rank_lis">
+        	<dd class="rank_user_rank">2</dd>
+        	<dd class="rank_user_name">me***u</dd>
+        	<dd class="rank_user_money">￥9556000.00</dd>
+        </dl>
+        <dl class="rank_lis">
+        	<dd class="rank_user_rank">3</dd>
+        	<dd class="rank_user_name">me***yu</dd>
+        	<dd class="rank_user_money">￥9556.00</dd>
+        </dl>
+        <dl class="rank_lis">
+        	<dd class="rank_user_rank">4</dd>
+        	<dd class="rank_user_name">me***u</dd>
+        	<dd class="rank_user_money">￥9556000.00</dd>
+        </dl>
+        <dl class="rank_lis">
+        	<dd class="rank_user_rank">5</dd>
+        	<dd class="rank_user_name">me***u</dd>
+        	<dd class="rank_user_money">￥9556000.00</dd>
+        </dl>
+        <dl class="rank_lis">
+        	<dd class="rank_user_rank">6</dd>
+        	<dd class="rank_user_name">me***u</dd>
+        	<dd class="rank_user_money">￥9556000.00</dd>
+        </dl>
+        <dl class="rank_lis">
+        	<dd class="rank_user_rank">7</dd>
+        	<dd class="rank_user_name">me***u</dd>
+        	<dd class="rank_user_money">￥9556000.00</dd>
+        </dl>
+        <dl class="rank_lis">
+        	<dd class="rank_user_rank">8</dd>
+        	<dd class="rank_user_name">me***u</dd>
+        	<dd class="rank_user_money">￥9556000.00</dd>
+        </dl>
+        <dl class="rank_lis">
+        	<dd class="rank_user_rank">9</dd>
+        	<dd class="rank_user_name">me***u</dd>
+        	<dd class="rank_user_money">￥9556000.00</dd>
+        </dl>
+        <dl class="rank_lis">
+        	<dd class="rank_user_rank">10</dd>
+        	<dd class="rank_user_name">me***u</dd>
+        	<dd class="rank_user_money">￥9556000.00</dd>
+        </dl>
+        <dl class="rank_lis">
+        	<dd class="rank_user_rank">11</dd>
+        	<dd class="rank_user_name">me***yu</dd>
+        	<dd class="rank_user_money">￥9556.00</dd>
+        </dl>
+        <dl class="rank_lis">
+        	<dd class="rank_user_rank">12</dd>
+        	<dd class="rank_user_name">me***yu</dd>
+        	<dd class="rank_user_money">￥9556.00</dd>
+        </dl>
+        <dl class="rank_lis">
+        	<dd class="rank_user_rank">13</dd>
+        	<dd class="rank_user_name">me***yu</dd>
+        	<dd class="rank_user_money">￥9556.00</dd>
+        </dl>
+        <dl class="rank_lis">
+        	<dd class="rank_user_rank">14</dd>
+        	<dd class="rank_user_name">me***u</dd>
+        	<dd class="rank_user_money">￥9556000.00</dd>
+        </dl>
+        <dl class="rank_lis">
+        	<dd class="rank_user_rank">15</dd>
+        	<dd class="rank_user_name">me***u</dd>
+        	<dd class="rank_user_money">￥9556000.00</dd>
+        </dl>
+        <dl class="rank_lis">
+        	<dd class="rank_user_rank">16</dd>
+        	<dd class="rank_user_name">me***u</dd>
+        	<dd class="rank_user_money">￥9556000.00</dd>
+        </dl>
+        <dl class="rank_lis">
+        	<dd class="rank_user_rank">17</dd>
+        	<dd class="rank_user_name">me***u</dd>
+        	<dd class="rank_user_money">￥9556000.00</dd>
+        </dl>
+        <dl class="rank_lis">
+        	<dd class="rank_user_rank">18</dd>
+        	<dd class="rank_user_name">me***u</dd>
+        	<dd class="rank_user_money">￥9556000.00</dd>
+        </dl>
+        <dl class="rank_lis">
+        	<dd class="rank_user_rank">19</dd>
+        	<dd class="rank_user_name">me***u</dd>
+        	<dd class="rank_user_money">￥9556000.00</dd>
+        </dl>
+        <dl class="rank_lis">
+        	<dd class="rank_user_rank">20</dd>
+        	<dd class="rank_user_name">me***u</dd>
+        	<dd class="rank_user_money">￥9556000.00</dd>
+        </dl>
+        </div>
+        <p class="more_ranking" id="more">查看更多排行</p>
+    </div> 
+
+    <div class="tab" style="display: none;">
+       <dl class="rank_title">
+        	<dd>排名</dd>
+        	<dd>用户名</dd>
+        	<dd>投资金额</dd>
+        </dl>
+        <div id="list-m" pagesize="15" class="list">
+        <dl class="rank_lis">
+        	<dd class="rank_user_rank">1</dd>
+        	<dd class="rank_user_name">me***yu</dd>
+        	<dd class="rank_user_money">￥9556.00</dd>
+        </dl>
+        <dl class="rank_lis">
+        	<dd class="rank_user_rank">2</dd>
+        	<dd class="rank_user_name">me***yu</dd>
+        	<dd class="rank_user_money">￥9556.00</dd>
+        </dl>
+        <dl class="rank_lis">
+        	<dd class="rank_user_rank">3</dd>
+        	<dd class="rank_user_name">me***yu</dd>
+        	<dd class="rank_user_money">￥9556.00</dd>
+        </dl>
+        <dl class="rank_lis">
+        	<dd class="rank_user_rank">4</dd>
+        	<dd class="rank_user_name">me***u</dd>
+        	<dd class="rank_user_money">￥9556000.00</dd>
+        </dl>
+        <dl class="rank_lis">
+        	<dd class="rank_user_rank">5</dd>
+        	<dd class="rank_user_name">me***u</dd>
+        	<dd class="rank_user_money">￥9556000.00</dd>
+        </dl>
+        <dl class="rank_lis">
+        	<dd class="rank_user_rank">6</dd>
+        	<dd class="rank_user_name">me***u</dd>
+        	<dd class="rank_user_money">￥9556000.00</dd>
+        </dl>
+        <dl class="rank_lis">
+        	<dd class="rank_user_rank">7</dd>
+        	<dd class="rank_user_name">me***u</dd>
+        	<dd class="rank_user_money">￥9556000.00</dd>
+        </dl>
+        <dl class="rank_lis">
+        	<dd class="rank_user_rank">8</dd>
+        	<dd class="rank_user_name">me***u</dd>
+        	<dd class="rank_user_money">￥9556000.00</dd>
+        </dl>
+        <dl class="rank_lis">
+        	<dd class="rank_user_rank">9</dd>
+        	<dd class="rank_user_name">me***u</dd>
+        	<dd class="rank_user_money">￥9556000.00</dd>
+        </dl>
+        <dl class="rank_lis">
+        	<dd class="rank_user_rank">10</dd>
+        	<dd class="rank_user_name">me***u</dd>
+        	<dd class="rank_user_money">￥9556000.00</dd>
+        </dl>
+        <dl class="rank_lis">
+        	<dd class="rank_user_rank">11</dd>
+        	<dd class="rank_user_name">me***yu</dd>
+        	<dd class="rank_user_money">￥9556.00</dd>
+        </dl>
+        <dl class="rank_lis">
+        	<dd class="rank_user_rank">12</dd>
+        	<dd class="rank_user_name">me***yu</dd>
+        	<dd class="rank_user_money">￥9556.00</dd>
+        </dl>
+        <dl class="rank_lis">
+        	<dd class="rank_user_rank">13</dd>
+        	<dd class="rank_user_name">me***yu</dd>
+        	<dd class="rank_user_money">￥9556.00</dd>
+        </dl>
+        <dl class="rank_lis">
+        	<dd class="rank_user_rank">14</dd>
+        	<dd class="rank_user_name">me***u</dd>
+        	<dd class="rank_user_money">￥9556000.00</dd>
+        </dl>
+        <dl class="rank_lis">
+        	<dd class="rank_user_rank">15</dd>
+        	<dd class="rank_user_name">me***u</dd>
+        	<dd class="rank_user_money">￥9556000.00</dd>
+        </dl>
+        <dl class="rank_lis">
+        	<dd class="rank_user_rank">16</dd>
+        	<dd class="rank_user_name">me***u</dd>
+        	<dd class="rank_user_money">￥9556000.00</dd>
+        </dl>
+        <dl class="rank_lis">
+        	<dd class="rank_user_rank">17</dd>
+        	<dd class="rank_user_name">me***u</dd>
+        	<dd class="rank_user_money">￥9556000.00</dd>
+        </dl>
+        <dl class="rank_lis">
+        	<dd class="rank_user_rank">18</dd>
+        	<dd class="rank_user_name">me***u</dd>
+        	<dd class="rank_user_money">￥9556000.00</dd>
+        </dl>
+        <dl class="rank_lis">
+        	<dd class="rank_user_rank">19</dd>
+        	<dd class="rank_user_name">me***u</dd>
+        	<dd class="rank_user_money">￥9556000.00</dd>
+        </dl>
+        <dl class="rank_lis">
+        	<dd class="rank_user_rank">20</dd>
+        	<dd class="rank_user_name">me***u</dd>
+        	<dd class="rank_user_money">￥9556000.00</dd>
+        </dl>
+
+    </div>  
+<p class="more_ranking" id="more">查看更多排行</p>
+    </div>   
+
+</div>	
+<script type="text/javascript">
+  $(document).ready(function(){
+        $("#ul1 li").click(function(){
+        $("#ul1 li").eq($(this).index()).addClass("active").siblings().removeClass('active');
+         $(".tab").eq($(this).index()).show().siblings(".tab").hide();
+        });
+    });
+    
+    </script>
+
+    <!--tab end-->   
+    
+    <script type="text/javascript" src="js/jquery.showMore-rank.js"></script>
+				<script>
+				    //调用显示更多插件。
+				   $.showMore(".list,.list-m");
+				</script>
+</body>
+</html>

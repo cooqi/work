@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	 <meta content="yes" name="apple-mobile-web-app-capable">
+ <meta content="yes" name="apple-touch-fullscreen">
+ <meta content="telephone=no,email=no" name="format-detection">
+ <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+ <meta name="keywords" content="coqoi"/>
+ <title>积分记录--钱婆婆手机版</title>
+ <!-- 忽略页面中的数字识别为电话，忽略email识别 -->
+ <meta name="format-detection" content="telphone=no, email=no"/>
+ <!-- 启用360浏览器的极速模式(webkit) -->
+ <meta name="renderer" content="webkit">
+ <!-- 避免IE使用兼容模式 -->
+ <meta http-equiv="X-UA-Compatible" content="IE=edge">
+ <!-- 不让百度转码 -->
+ <meta http-equiv="Cache-Control" content="no-siteapp" />
+ <!--隱藏底部 iPhone button bar-->
+ <meta name="apple-mobile-web-app-capable" content="yes">
+<!--icon图标-->
+ <link rel="apple-touch-icon" sizes="114x114" href="" />
+<!--定义loading图片-->
+ <link rel="apple-touch-startup-image" href="/startup.png">
+ <script type="text/javascript" src="js/jquery-1.8.0.min.js" ></script>
+ <!--flexible为手机自适应的js插件-->
+ <script type="text/javascript" src="js/flexible.js" ></script>
+ <script type="text/javascript" src="js/flexible_css.js" ></script>
+
+ <link href="css/m_style.css" type="text/css" rel="stylesheet">
+</head>
+<body>
+	<div class="object-head fqa_head">
+    <img src="images/back.png" alt="" class="object-back" onclick='history.go(-1)'>
+     <p>积分记录</p>
+ </div>
+
+ <div class="individual-integral">
+   <div class="integral-sign">
+
+     <div class="head-sign">
+       <div><!--如果没有签到，这里隐藏-->
+         <p>已签到</p>
+         <span>连续签到8天</span>
+       </div>
+
+       <div style="display: none"><!--如果没有签到，这里显示-->
+         <p>立即签到</p>
+       </div>
+     </div>
+
+     <dl>
+       <dd class="integral-today"><i></i>今日获得积分：<span>1</span>分</dd>
+       <dd class="integral-total"><i></i>累计总分：<span>123</span>分</dd>
+     </dl>
+   </div><!--head签到-->
+
+   <div class="make-integral">
+     <div class="integral-title">
+       <h3>赚积分</h3>
+       <a href="http://qianpopo.com.cn/_hq/qpp_phone_web/individual_integra-detail.html">去查看</a>
+     </div>
+
+     <dl class="make-way">
+       <dd>每日签到</dd>
+       <dd>+1</dd>
+       <dd class="make-state-have">已完成</dd><!--已完成则添加‘make-state-have’的class，字体颜色为绿色-->
+     </dl>
+     <dl class="make-way">
+       <dd>连续签到15天</dd>
+       <dd>+3</dd>
+       <dd>未完成</dd>
+     </dl>
+     <dl class="make-way">
+       <dd>每日每投一百</dd>
+       <dd>+3</dd>
+       <dd>未完成</dd>
+     </dl>
+   </div><!--赚积分-->
+
+   <div class="integral-exchange">
+     <div class="integral-title">
+       <h3>积分兑换</h3>
+       <a href="http://qianpopo.com.cn/_hq/qpp_phone_web/individual_integra-exchange.html">去查看</a>
+     </div>
+     
+     <div class="integral-voucher">
+       <div class="voucher-list">
+         <h3>￥<span>10</span></h3>
+         <p>所需积分：<span>1000</span></p>
+         <span class="voucher">立即兑换</span>
+       </div>
+       <div class="voucher-list">
+         <h3>￥<span>50</span></h3>
+         <p>所需积分：<span>1000</span></p>
+         <span class="voucher">立即兑换</span>
+       </div>
+       <div class="voucher-list">
+         <h3>￥<span>100</span></h3>
+         <p>所需积分：<span>11000</span></p>
+         <span class="voucher">立即兑换</span>
+       </div>
+       <div class="voucher-list">
+         <h3>￥<span>300</span></h3>
+         <p>所需积分：<span>21000</span></p>
+         <span class="voucher">立即兑换</span>
+       </div>
+     </div>
+   </div><!--积分兑换-->
+   
+   <div class="pup-box confirm-voucher" style="display: none">
+   <div class="boxbg"></div>
+   <div class="del-tips">
+     <p>是否用<span class="jifen"></span>积分兑换<span class="quan"></span>现金券</p>
+      <dl>
+        <dd class="del-sure">兑换</dd>
+        <dd class="del-cancel">取消</dd>
+      </dl>
+   </div>
+  </div>
+
+ </div>
+
+<script>
+/**积分兑换**/
+  $('.voucher').click(function(){
+    var money=$(this).siblings('h3').children('span').html();
+    var integral=$(this).siblings('p').children('span').html();
+    $('.confirm-voucher .jifen').html(money);
+    $('.confirm-voucher .quan').html(integral);
+    $('.pup-box').show();
+  })
+
+    //取消兑换
+      $('.del-cancel').click(function(){
+        $('.pup-box').hide();
+      })
+
+    //确认兑换需连接动态数据，前台暂不做功能
+</script>
+</body>
+</html>

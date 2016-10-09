@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	 <meta content="yes" name="apple-mobile-web-app-capable">
+ <meta content="yes" name="apple-touch-fullscreen">
+ <meta content="telephone=no,email=no" name="format-detection">
+ <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+ <meta name="keywords" content="coqoi"/>
+<title>全部标的-钱婆婆手机版</title>
+ <!-- 忽略页面中的数字识别为电话，忽略email识别 -->
+ <meta name="format-detection" content="telphone=no, email=no"/>
+ <!-- 启用360浏览器的极速模式(webkit) -->
+ <meta name="renderer" content="webkit">
+ <!-- 避免IE使用兼容模式 -->
+ <meta http-equiv="X-UA-Compatible" content="IE=edge">
+ <!-- 不让百度转码 -->
+ <meta http-equiv="Cache-Control" content="no-siteapp" />
+ <!--隱藏底部 iPhone button bar-->
+ <meta name="apple-mobile-web-app-capable" content="yes">
+<!--icon图标-->
+ <link rel="apple-touch-icon" sizes="114x114" href="" />
+<!--定义loading图片-->
+ <link rel="apple-touch-startup-image" href="/startup.png">
+ <script type="text/javascript" src="js/jquery-1.8.0.min.js" ></script>
+ <!--flexible为手机自适应的js插件-->
+ <script type="text/javascript" src="js/flexible.js" ></script>
+ <script type="text/javascript" src="js/flexible_css.js" ></script>
+
+ <link href="css/m_style.css" type="text/css" rel="stylesheet">
+
+	
+</head>
+<body>
+    <!--head-->
+    <div class="all-object-head">
+	<div class="object-head">
+    <img src="images/back.png" alt="" class="object-back" onclick='history.go(-1)'>
+    <div id='class-state'>状态<span></span></div>
+    <p>全部标的</p>
+    </div>
+    
+		<ul id='class-list' style="display: none">
+            <li class="select-class"><a href="javascript:void(0)">全&nbsp;部</a></li>
+            <li><a href="javascript:void(0)">进行中</a></li>
+            <li><a href="javascript:void(0)">还款中</a></li>
+            <li><a href="javascript:void(0)">已完成</a></li>
+        </ul>
+        <script>
+        var obj = document.getElementById('class-state') ;
+        var ulClass=document.getElementById('class-list');   
+        /* obj.onclick = function() {
+               if(ulClass.style.display=='none'){
+                    ulClass.style.display='flex';
+                }
+                else{
+                    ulClass.style.display='none';
+                }
+            }*/
+           obj.addEventListener('touchstart',function(event){    
+                if(ulClass.style.display=='none'){
+                    ulClass.style.display='';
+                    ulClass.setAttribute('class','flex');
+                    $('#class-state').append("<style>span#class-state:after{ border-color:transparent transparent #ccc #ccc }</style>");
+                
+                }
+                else{
+                    ulClass.style.display='none';
+                    ulClass.setAttribute('class','');
+                    $('#class-state').append("<style>span#class-state:after{ border-color:transparent transparent #ef545c #ef545c }</style>");
+                }
+            },false);
+            /*obj.addEventListener('touchstart',function(event){    
+                if(ulClass.style.display=='none'){
+                    ulClass.style.display='flex';
+                }
+                else{
+                    ulClass.style.display='none';
+                }
+            },false);*/
+            
+        </script>
+	</div><!--head end-->
+
+
+     
+     <!--center_main-->
+	<div class="center_main all-object">
+	<!--近期标的-->
+		<div class="recent_object">
+			<div class="recent_object_list">
+				<div class="object_title">
+					<p><a href="http://www.qianpopo.com.cn/_hq/qpp_phone_web/objiect-details.html">竞标保16010</a></p>
+					<img src="images/diya.png" alt="" class="object_dyimg">
+					<div class="obj_iconimg">
+					<img src="images/dan.png" alt="">
+					</div>
+				</div>
+				<div class="object_details">
+					<div class="left_information">
+						<h4><span>12.00%</span>年化收益率</h4>
+						<table>
+							<tr>
+								<td>投资总额：<span>30.00万元</span></td>
+								<td>起投金额：<span>100元</span></td>
+							</tr>
+							<tr>
+								<td>投资期限：<span>1个月</span></td>
+								<td>还款方式：<span>一次性还款</span></td>
+							</tr>
+						</table>
+					</div><!--left-->
+					<div class="right_state">
+					    <!--圆环进度条的实现代码-->
+                    <div class="circle" style="left:0">
+                        <div class="pie_left"><div class="left"></div></div>
+                        <div class="pie_right"><div class="right"></div></div>
+                        <div class="mask"><span>100</span>%</div>
+                    </div>                 
+                  <!--圆环进度条的实现代码 end-->
+						<p href="#" class="state_buttom" id="complete">已还款</p>
+					</div><!--right-->
+				</div>
+			</div><!--list-->
+
+			<div class="recent_object_list">
+				<div class="object_title">
+					<p>竞标保16010</p>
+					<img src="images/zhiya.png" alt="" class="object_dyimg">
+					<div class="obj_iconimg">
+					<img src="images/tian.png" alt="">
+					<img src="images/xin.png" alt="">
+					</div>
+				</div>
+				<div class="object_details">
+					<div class="left_information">
+						<h4><span>12.00%</span>年化收益率</h4>
+						<table>
+							<tr>
+								<td>投资总额：<span>30.00万元</span></td>
+								<td>起投金额：<span>100元</span></td>
+							</tr>
+							<tr>
+								<td>投资期限：<span>1个月</span></td>
+								<td>还款方式：<span>一次性还款</span></td>
+							</tr>
+						</table>
+					</div><!--left-->
+					<div class="right_state">
+					    <!--圆环进度条的实现代码-->
+                    <div class="circle" style="left:0">
+                        <div class="pie_left"><div class="left"></div></div>
+                        <div class="pie_right"><div class="right"></div></div>
+                        <div class="mask"><span>30</span>%</div>
+                    </div>                 
+                  <!--圆环进度条的实现代码 end-->
+						<p href="#" class="state_buttom" id="ongoing">还款中</p>
+					</div><!--right-->
+				</div>
+			</div><!--list-->
+
+			<div class="recent_object_list">
+				<div class="object_title">
+					<p>竞标保16010</p>
+					<img src="images/diya.png" alt="" class="object_dyimg">
+					<div class="obj_iconimg">
+					<img src="images/di.png" alt="">
+					</div>
+				</div>
+				<div class="object_details">
+					<div class="left_information">
+						<h4><span>12.00%</span>年化收益率</h4>
+						<table>
+							<tr>
+								<td>投资总额：<span>30.00万元</span></td>
+								<td>起投金额：<span>100元</span></td>
+							</tr>
+							<tr>
+								<td>投资期限：<span>1个月</span></td>
+								<td>还款方式：<span>一次性还款</span></td>
+							</tr>
+						</table>
+					</div><!--left-->
+					<div class="right_state">
+					    <!--圆环进度条的实现代码-->
+                    <div class="circle" style="left:0">
+                        <div class="pie_left"><div class="left"></div></div>
+                        <div class="pie_right"><div class="right"></div></div>
+                        <div class="mask"><span>0</span>%</div>
+                    </div>                 
+                  <!--圆环进度条的实现代码 end-->
+						<p href="#" class="state_buttom" id="ongoing">待还款</p>
+					</div><!--right-->
+				</div>
+			</div><!--list-->
+
+            <div class="recent_object_list">
+                <div class="object_title">
+                    <p>竞标保16010</p>
+                    <img src="images/diya.png" alt="" class="object_dyimg">
+                    <div class="obj_iconimg">
+                    <img src="images/di.png" alt="">
+                    </div>
+                </div>
+                <div class="object_details">
+                    <div class="left_information">
+                        <h4><span>12.00%</span>年化收益率</h4>
+                        <table>
+                            <tr>
+                                <td>投资总额：<span>30.00万元</span></td>
+                                <td>起投金额：<span>100元</span></td>
+                            </tr>
+                            <tr>
+                                <td>投资期限：<span>1个月</span></td>
+                                <td>还款方式：<span>一次性还款</span></td>
+                            </tr>
+                        </table>
+                    </div><!--left-->
+                    <div class="right_state">
+                        <!--圆环进度条的实现代码-->
+                    <div class="circle" style="left:0">
+                        <div class="pie_left"><div class="left"></div></div>
+                        <div class="pie_right"><div class="right"></div></div>
+                        <div class="mask"><span>0</span>%</div>
+                    </div>                 
+                  <!--圆环进度条的实现代码 end-->
+                        <p href="#" class="state_buttom" id="ongoing">待还款</p>
+                    </div><!--right-->
+                </div>
+            </div><!--list-->
+
+            <div class="recent_object_list">
+                <div class="object_title">
+                    <p>竞标保16010</p>
+                    <img src="images/diya.png" alt="" class="object_dyimg">
+                    <div class="obj_iconimg">
+                    <img src="images/di.png" alt="">
+                    </div>
+                </div>
+                <div class="object_details">
+                    <div class="left_information">
+                        <h4><span>12.00%</span>年化收益率</h4>
+                        <table>
+                            <tr>
+                                <td>投资总额：<span>30.00万元</span></td>
+                                <td>起投金额：<span>100元</span></td>
+                            </tr>
+                            <tr>
+                                <td>投资期限：<span>1个月</span></td>
+                                <td>还款方式：<span>一次性还款</span></td>
+                            </tr>
+                        </table>
+                    </div><!--left-->
+                    <div class="right_state">
+                        <!--圆环进度条的实现代码-->
+                    <div class="circle" style="left:0">
+                        <div class="pie_left"><div class="left"></div></div>
+                        <div class="pie_right"><div class="right"></div></div>
+                        <div class="mask"><span>0</span>%</div>
+                    </div>                 
+                  <!--圆环进度条的实现代码 end-->
+                        <p href="#" class="state_buttom" id="ongoing">待还款</p>
+                    </div><!--right-->
+                </div>
+            </div><!--list-->
+
+            <div class="recent_object_list">
+                <div class="object_title">
+                    <p>竞标保16010</p>
+                    <img src="images/diya.png" alt="" class="object_dyimg">
+                    <div class="obj_iconimg">
+                    <img src="images/di.png" alt="">
+                    </div>
+                </div>
+                <div class="object_details">
+                    <div class="left_information">
+                        <h4><span>12.00%</span>年化收益率</h4>
+                        <table>
+                            <tr>
+                                <td>投资总额：<span>30.00万元</span></td>
+                                <td>起投金额：<span>100元</span></td>
+                            </tr>
+                            <tr>
+                                <td>投资期限：<span>1个月</span></td>
+                                <td>还款方式：<span>一次性还款</span></td>
+                            </tr>
+                        </table>
+                    </div><!--left-->
+                    <div class="right_state">
+                        <!--圆环进度条的实现代码-->
+                    <div class="circle" style="left:0">
+                        <div class="pie_left"><div class="left"></div></div>
+                        <div class="pie_right"><div class="right"></div></div>
+                        <div class="mask"><span>0</span>%</div>
+                    </div>                 
+                  <!--圆环进度条的实现代码 end-->
+                        <p href="#" class="state_buttom" id="ongoing">待还款</p>
+                    </div><!--right-->
+                </div>
+            </div><!--list-->
+
+			<script type="text/javascript">
+                        $(function() {          
+                           $('.circle').each(function(index, el) {
+                                var num = $(this).find('span').text() * 3.6;
+                                if (num<=180) {
+                                    $(this).find('.right').css('transform', "rotate(" + num + "deg)");
+                                } else {
+                                    $(this).find('.right').css('transform', "rotate(180deg)");
+                                    $(this).find('.left').css('transform', "rotate(" + (num - 180) + "deg)");
+                                };
+                            });
+                        });
+                    </script><!--状态圆环js-->
+
+
+                  
+		</div><!--近期标的 end-->     
+	</div><!--center_main end-->
+
+
+
+	
+
+	<a href="#"><img src="images/kf.png" class="kf"></a><!--客服-->
+</body>
+</html>

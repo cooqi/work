@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	 <meta content="yes" name="apple-mobile-web-app-capable">
+ <meta content="yes" name="apple-touch-fullscreen">
+ <meta content="telephone=no,email=no" name="format-detection">
+ <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+ <meta name="keywords" content="coqoi"/>
+ <title>最新活动--钱婆婆手机版</title>
+ <!-- 忽略页面中的数字识别为电话，忽略email识别 -->
+ <meta name="format-detection" content="telphone=no, email=no"/>
+ <!-- 启用360浏览器的极速模式(webkit) -->
+ <meta name="renderer" content="webkit">
+ <!-- 避免IE使用兼容模式 -->
+ <meta http-equiv="X-UA-Compatible" content="IE=edge">
+ <!-- 不让百度转码 -->
+ <meta http-equiv="Cache-Control" content="no-siteapp" />
+ <!--隱藏底部 iPhone button bar-->
+ <meta name="apple-mobile-web-app-capable" content="yes">
+<!--icon图标-->
+ <link rel="apple-touch-icon" sizes="114x114" href="" />
+<!--定义loading图片-->
+ <link rel="apple-touch-startup-image" href="/startup.png">
+ <script type="text/javascript" src="js/jquery-1.8.0.min.js" ></script>
+ <!--flexible为手机自适应的js插件-->
+ <script type="text/javascript" src="js/flexible.js" ></script>
+ <script type="text/javascript" src="js/flexible_css.js" ></script>
+
+ <link href="css/m_style.css" type="text/css" rel="stylesheet">
+</head>
+<body>
+	<div class="object-head fqa_head">
+    <img src="images/back.png" alt="" class="object-back" onclick='history.go(-1)'>
+     <div class="nav_icon">
+      <span class="bid-rule"></span>     
+     </div>
+     <p>自动投标</p>
+ </div>
+
+  <div class="automaticBid">
+    <form action="">
+      <div class="ckeck-automatic">
+        <span>自动投标</span>
+            <label for="ios-switch">  
+                 <input type="checkbox" class="ios-switch" name="ios-switch" id="ios-switch" /><div>  
+                    <div>  
+                    </div>  
+                </div>  
+            </label>
+      </div>
+
+      <!--自动投标信息，用户选择启动则显示-->
+      <div class="bid-info" style="display: none;">
+        <ul>
+          <li>
+          <label for="bid-amount">
+            <span class="info-title">投标金额</span>
+            <span class="info-input amountBid"><input type="text" name="bid-min-amount" id="bid-amount" class="bid-min-amount" readonly="readonly"><input type="text" name="bid-max-amount" id="bid-amount" readonly="readonly" class="bid-max-amount">元</span>
+          </label>
+          </li>
+          <li>
+          <label for="bid-rate">
+            <span class="info-title">投标利率</span>
+            <span class="info-input">≥<input type="number" name="bid-rate" id="bid-rate">%</span>
+          </label>
+          </li>
+          <li>
+          <label for="bid-time-limit">
+            <span class="info-title">投标期限</span>
+            <span class="info-input time-limit"><input type="text" name="bid-min-limit" class="bid-time-limit min-limit" id="bid-time-limit" readonly="readonly"><input type="text" name="bid-max-limit" class="bid-time-limit max-limit" id="bid-time-limit" readonly="readonly">个月以内</span>
+          </label>
+          </li>
+        </ul>
+
+        <ul>
+          <li>
+          <label for="retention-amount">
+            <span class="info-title">账户保留金额</span>
+            <span class="info-input">≥<input type="number" name="retention-amount" id="retention-amount">元</span>
+          </label>
+          </li>
+        </ul>
+
+        <ul>
+          <li>
+          <label for="dateinfo">
+            <span class="info-title">当前设置自动取消日期</span>
+            <span class="info-input"><input class="datainp" name="dateinfo" id="dateinfo" type="text" readonly></span>
+          </label>
+          </li>
+        </ul>
+         
+         <input type="submit" value="保存"  class="base-set-submit" onclick="return checkNull()">
+      </div><!--自动投标信息-->
+          
+      <!--投标金额 弹出框-->
+       <div class="pop-up bid-set bid-amount-set" style="display: none;">
+         <div class="box-info">
+           <ul>
+             <li>
+               <input type="number" name="min-bid-amount">
+               <p><span>*</span>（需≥100元）</p>
+             </li>
+             <li><span>——</span></li>
+             <li>
+               <input type="number" name="max-bid-amount">
+               <p><span>*</span>（需≥200元）</p>
+             </li>
+           </ul>
+
+            <dl>
+              <dd><span class="cancel">取消</span></dd>
+              <dd><span class="det">完成</span></dd>
+            </dl>
+         </div> 
+       </div>  
+
+       <!--投标期限 弹出框-->
+       <div class="pop-up bid-set bid-limit" style="display: none;">
+         <div class="box-info">
+           <ul>
+             <li>
+               <input type="number" name="min-bid-limit">
+             </li>
+             <li><span>——</span></li>
+             <li>
+               <input type="number" name="max-bid-limit">
+             </li>
+           </ul>
+
+            <dl>
+              <dd><span class="cancel">取消</span></dd>
+              <dd><span class="det">完成</span></dd>
+            </dl>
+         </div> 
+       </div>  
+
+    </form>
+
+    <!--日期-->
+    <div class="date-bg" style="display: none;" ></div><!--bg-->
+    <script type="text/javascript" src="js/jedate.js"></script>
+    <script type="text/javascript">
+    jeDate({
+    dateCell:"#dateinfo",
+    format:"YYYY-MM-DD",
+    isinitVal:true,
+    isTime:true, //isClear:false,
+    minDate:"2014-09-19",
+  }) 
+
+</script>
+    <script>
+      /*$('input[name="dateinfo"]').click(function(){
+       $('.date-bg').css('display','block');
+      })*/
+    </script>
+
+
+<script>
+  //自动投标
+$('input[name="ios-switch"]').click(function(){
+          //获取checked的值，如果选择则为on，没选中则为undefined
+           var bidswitch=$('input[name="ios-switch"]:checked').val();
+
+           //值为on的时候，显示后面设置内容，否则隐藏
+           if(bidswitch=='on'){
+            $('.bid-info').css('display','block');
+           }else{
+            $('.bid-info').css('display','none');
+           }
+           
+     })  
+
+  //表单验证
+  function checkNull(){
+    var bidAmount=$('input[name="bid-amount"]').val();
+    var bidRate=$('input[name="bid-rate"]').val();
+    var bidTime=$('input[name="bid-time-limit"]').val();
+    var amount=$('input[name="retention-amount"]').val();
+    var bidDateinfo=$('input[name="dateinfo"]').val();
+
+    if(bidAmount==''){
+      alert('请输入您的投标金额')
+      return false;
+    }
+    if(bidRate==''){
+      alert('请输入您的投标利率')
+      return false;
+    }
+    if(bidRate<0){
+      alert('请正确填写您的投标利率')
+      return false;
+    }
+    if(bidTime==''){
+      alert('请输入您的投标期限')
+      return false;
+    }
+    if(bidTime<1){
+               alert('请正确填写您的投标期限，最少1月以内，包括天标')
+               return false;
+          }
+    if(amount==''){
+      alert('请输入您的账户保留金额')
+      return false;
+    }
+    if(amount<0){
+               alert('请正确填写您的账户保留金额，最少为1元')
+               return false;
+          }
+
+  }
+
+
+
+
+  //弹出框 
+  $('span.amountBid').click(function(){
+    $('.bid-amount-set').show();
+  })
+  
+  $('span.time-limit').click(function(){
+    $('.bid-limit').show();
+  })
+
+  //取消确定
+      $('span.cancel').click(function(){
+             $(this).parents('.pop-up').hide();
+      })//取消，关闭弹出框
+
+       $('.bid-amount-set span.det').click(function(){
+          var minBidAmount=$('input[name="min-bid-amount"]').val();
+          var maxBidAmount=$('input[name="max-bid-amount"]').val();
+          $('input[name="bid-min-amount"]').val(minBidAmount);
+          $('input[name="bid-max-amount"]').val(maxBidAmount);
+          $('.bid-amount-set').hide();
+       })
+       if($('input[name="min-bid-amount"]').val()!=''){
+                  $('input[name="bid-min-amount"]').after("<span>~</span>"); 
+       }
+
+
+$('.bid-limit span.det').click(function(){
+   var minBidAmount=$('input[name="min-bid-limit"]').val();
+   var maxBidAmount=$('input[name="max-bid-limit"]').val();
+   $('input[name="bid-min-limit"]').val(minBidAmount);
+   $('input[name="bid-max-limit"]').val(maxBidAmount);
+   $('.bid-limit').hide();
+})
+if($('input[name="bid-min-limit"]').val()!=''){
+                  $('input[name="bid-min-limit"]').after("<span>~</span>"); 
+       }
+</script>
+  </div>
+    
+
+
+    <!--投标规则-->
+    <div class="bid-rule-tips" style="display: none;">
+     <h2>投标规则</h2>
+      <div>
+        <h3>设置规则说明</h3>
+        <ol type="1">
+          <li>单笔最小投标金额为100元，最大投标金额必须大于或等于200元。</li>
+          <li>设置的自动投标金额 <= 账户可用金额 - 账户保留金额，否则不能自动投标。</li>
+          <li>每次自动投标的金额 <= 所投标额的80%，若超出，投标金
+      额就是所投标额度的80%.<br>
+          例如:您账户可用余额为21万，如果标的总额为20万，您最高 
+      自动投标金额为 20*80% 万。
+      </li>
+        </ol>
+      </div>
+
+      <div>
+        <h3>排序规则说明</h3>
+        <ol type="1">
+          <li>投标顺序按照开启自动投标功能的时间先后进行排序。</li>
+          <li>每个会员每个借款仅自动投标一次，投标成功后，排到所有自动投标会员的末尾。</li>
+          <li>中间对自动投标进行修改的，排名不变。</li>
+          <li>新开启自动投标用户，自动排到所有自动投标会员的末尾。</li>
+          <li>当账户余额不足时，系统按顺序进行，但不投标，依次转移到下一个自动投标。</li>
+        </ol>
+      </div>
+
+    </div>
+
+
+    <script type="text/javascript">
+    //点击显示隐藏投标规则
+      $('.bid-rule').click(function(){
+        $('.bid-rule-tips').toggle();
+        $('.automaticBid').toggle();
+        if($('.bid-rule-tips').css('display')=='block'){
+          $(this).addClass("bid-icon");
+          $(".bid-icon").html('投标')
+        }else{
+          $(".bid-icon").html('')
+          $(this).removeClass("bid-icon")
+        }
+      })
+    </script>
+</body>
+</html>

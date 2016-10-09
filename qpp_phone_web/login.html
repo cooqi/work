@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	 <meta content="yes" name="apple-mobile-web-app-capable">
+ <meta content="yes" name="apple-touch-fullscreen">
+ <meta content="telephone=no,email=no" name="format-detection">
+ <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+ <meta name="keywords" content="coqoi"/>
+ <title>我的账户--钱婆婆手机版</title>
+ <!-- 忽略页面中的数字识别为电话，忽略email识别 -->
+ <meta name="format-detection" content="telphone=no, email=no"/>
+ <!-- 启用360浏览器的极速模式(webkit) -->
+ <meta name="renderer" content="webkit">
+ <!-- 避免IE使用兼容模式 -->
+ <meta http-equiv="X-UA-Compatible" content="IE=edge">
+ <!-- 不让百度转码 -->
+ <meta http-equiv="Cache-Control" content="no-siteapp" />
+ <!--隱藏底部 iPhone button bar-->
+ <meta name="apple-mobile-web-app-capable" content="yes">
+<!--icon图标-->
+ <link rel="apple-touch-icon" sizes="114x114" href="" />
+<!--定义loading图片-->
+ <link rel="apple-touch-startup-image" href="/startup.png">
+ <script type="text/javascript" src="js/jquery-1.8.0.min.js" ></script>
+ <!--flexible为手机自适应的js插件-->
+ <script type="text/javascript" src="js/flexible.js" ></script>
+ <script type="text/javascript" src="js/flexible_css.js" ></script>
+
+ <link href="css/m_style.css" type="text/css" rel="stylesheet">
+</head>
+<body>
+  <div class="user-login">
+    <img src="images/logo-max.png" alt="" class="login-logo">
+
+    <form action="">
+      <ul>
+        <li class="user-name"><span></span><input type="text" placeholder="请输入用户名" name="username"></li>
+        <li class="login-key"><span></span><input type="text" placeholder="请输入密码" name="loginkey"></li>
+        <li class="login-code"><input type="text" placeholder="请输入验证码" name="logincode"><img src="images/login-code.png" alt="" class="code-img"></li>
+      </ul>
+      <input type="submit" value="登录">
+    </form>
+    <dl>
+      <dd><a href="http://www.qianpopo.com.cn/_hq/qpp_phone_web/register.html">快速注册</a></dd>
+      <dd><a href="http://www.qianpopo.com.cn/_hq/qpp_phone_web/forgot_password.html">忘记密码</a></dd>
+    </dl>
+  </div>
+    
+    <script>
+      $('input[type="submit"]').click(function(){
+        var username=$('input[name="username"]').val();
+        var loginkey=$('input[name="loginkey"]').val();
+        var logincode=$('input[name="logincode"]').val();
+        if(username==''){
+          alert('请输入用户名');
+          return false;
+        }
+        if(loginkey==''){
+          alert('请输入用密码');
+          return false;
+        }
+        if(logincode==''){
+          alert('请输入验证码');
+          return false;
+        }
+      })
+    </script>
+</body>
+</html>

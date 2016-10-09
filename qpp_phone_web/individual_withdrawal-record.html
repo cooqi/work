@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	 <meta content="yes" name="apple-mobile-web-app-capable">
+ <meta content="yes" name="apple-touch-fullscreen">
+ <meta content="telephone=no,email=no" name="format-detection">
+ <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+ <meta name="keywords" content="coqoi"/>
+ <title>我的账户--钱婆婆手机版</title>
+ <!-- 忽略页面中的数字识别为电话，忽略email识别 -->
+ <meta name="format-detection" content="telphone=no, email=no"/>
+ <!-- 启用360浏览器的极速模式(webkit) -->
+ <meta name="renderer" content="webkit">
+ <!-- 避免IE使用兼容模式 -->
+ <meta http-equiv="X-UA-Compatible" content="IE=edge">
+ <!-- 不让百度转码 -->
+ <meta http-equiv="Cache-Control" content="no-siteapp" />
+ <!--隱藏底部 iPhone button bar-->
+ <meta name="apple-mobile-web-app-capable" content="yes">
+<!--icon图标-->
+ <link rel="apple-touch-icon" sizes="114x114" href="" />
+<!--定义loading图片-->
+ <link rel="apple-touch-startup-image" href="/startup.png">
+ <script type="text/javascript" src="js/jquery-1.8.0.min.js" ></script>
+ <!--flexible为手机自适应的js插件-->
+ <script type="text/javascript" src="js/flexible.js" ></script>
+ <script type="text/javascript" src="js/flexible_css.js" ></script>
+
+ <link href="css/m_style.css" type="text/css" rel="stylesheet">
+</head>
+<body>
+	<div class="object-head fqa_head">
+    <img src="images/back.png" alt="" class="object-back" onclick='history.go(-1)'>
+     <p>提现记录</p>
+ </div>
+
+  <div class="cztx-record withdrawal-record">
+    <table>
+      <tr>
+        <th>编号</th>
+        <th>申请时间</th>
+        <th>提现金额</th>
+        <th>审核状态</th>
+        <th>撤销</th>
+      </tr>
+      <tr>
+        <td class="num">449</td>
+        <td>2016-04-02 08:55</td>
+        <td>1000</td>
+        <td class="state">待审核</td>
+        <td class="handle"><span></span></td>
+      </tr>
+      <tr>
+        <td class="num">444</td>
+        <td>2016-03-02 08:55</td>
+        <td>100</td>
+        <td class="state">处理中</td>
+        <td class="handle"><span></span></td>
+      </tr>
+      <tr>
+        <td class="num">443</td>
+        <td>2016-02-02 08:55</td>
+        <td>1000</td>
+        <td class="state">未通过审核</td>
+        <td class="handle"><span></span></td>
+      </tr>
+      <tr>
+        <td class="num">440</td>
+        <td>2016-01-02 08:55</td>
+        <td>2000</td>
+        <td class="state">提现成功</td>
+        <td class="handle"><span></span></td>
+      </tr>
+    </table>
+  </div>
+
+  <!--撤销弹出框-->
+  <div class="pup-box undo-withdrawal" style="display: none">
+   <div class="boxbg"></div>
+   <div class="del-tips">
+     <p>您确定要撤销“编号<span></span>”的提现吗？</p>
+      <dl>
+        <dd class="del-sure">确定</dd>
+        <dd class="del-cancel">取消</dd>
+      </dl>
+   </div>
+  </div>
+
+    <script>
+    //如果审核状态为‘待审核’，则可以撤销提现
+    //撤销按钮的样式，增加tx-undo
+      var state=$('.state')
+      for(var i=0;i<state.length;i++){
+             if($('.state:eq('+ i +')').text()=='待审核'){
+              $('.handle:eq('+ i +')').children('span').text("撤销");
+              $('.handle:eq('+ i +')').addClass("tx-undo");
+             }else{
+              $('.handle:eq('+ i +')').children('span').text("——");
+             }
+      }
+
+      //撤销弹出提示框       
+      $('.tx-undo span').click(function(){
+        var num=$(this).parent().siblings('.num').text();//获取编号
+        $('.del-tips>p>span').text(num);//赋值
+
+        $('.undo-withdrawal').show();//弹出
+      })
+    //取消撤销
+      $('.del-cancel').click(function(){
+        $('.undo-withdrawal').hide();//隐藏
+      })
+    //确定撤销，涉及数据库，暂不写
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	 <meta content="yes" name="apple-mobile-web-app-capable">
+ <meta content="yes" name="apple-touch-fullscreen">
+ <meta content="telephone=no,email=no" name="format-detection">
+ <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+ <meta name="keywords" content="coqoi"/>
+ <title>安全保障--钱婆婆手机版</title>
+ <!-- 忽略页面中的数字识别为电话，忽略email识别 -->
+ <meta name="format-detection" content="telphone=no, email=no"/>
+ <!-- 启用360浏览器的极速模式(webkit) -->
+ <meta name="renderer" content="webkit">
+ <!-- 避免IE使用兼容模式 -->
+ <meta http-equiv="X-UA-Compatible" content="IE=edge">
+ <!-- 不让百度转码 -->
+ <meta http-equiv="Cache-Control" content="no-siteapp" />
+ <!--隱藏底部 iPhone button bar-->
+ <meta name="apple-mobile-web-app-capable" content="yes">
+<!--icon图标-->
+ <link rel="apple-touch-icon" sizes="114x114" href="" />
+<!--定义loading图片-->
+ <link rel="apple-touch-startup-image" href="/startup.png">
+ <script type="text/javascript" src="js/jquery-1.8.0.min.js" ></script>
+ <!--flexible为手机自适应的js插件-->
+ <script type="text/javascript" src="js/flexible.js" ></script>
+ <script type="text/javascript" src="js/flexible_css.js" ></script>
+
+ <script type="text/javascript" src="js/jquery.showMore.js"></script>
+
+ <link href="css/m_style.css" type="text/css" rel="stylesheet">
+</head>
+<body>
+ <div class="object-head fqa_head">
+    <img src="images/back.png" alt="" class="object-back" onclick='history.go(-1)'>
+     <p>基本设置</p>
+ </div>
+
+<!--地址-->
+    <script type="text/javascript" src="js/dialog.js"></script>
+    <script type="text/javascript" src="js/mobile-select-area.js"></script>
+<!--地址-->
+
+<!--年龄-->
+  <script src="js/mobiscroll_002.js" type="text/javascript"></script>
+  <script src="js/mobiscroll_004.js" type="text/javascript"></script>
+  <link href="css/mobiscroll_002.css" rel="stylesheet" type="text/css">
+  <link href="css/mobiscroll.css" rel="stylesheet" type="text/css">
+  <script src="js/mobiscroll.js" type="text/javascript"></script>
+  <script src="js/mobiscroll_003.js" type="text/javascript"></script>
+  <script src="js/mobiscroll_005.js" type="text/javascript"></script>
+  <link href="css/mobiscroll_003.css" rel="stylesheet" type="text/css">
+<!--年龄--> 
+
+
+<div class="base-set">
+  <form action="">
+   <div class="headimg">
+         <div class="half">
+          <a class="logo" id="logox">
+            <img id="bgl" src="images/head_portrait.png"/><!--//默认头像
+            //如果用户没有设置头像，则头像是系统默认显示的图片
+            //如果用户修改头像，则之前设置的头像将会移除，新上传的图片显示-->
+          </a>
+          <div id="view"></div><!--//新头像显示区域-->
+         </div>
+
+    <article class="htmleaf-container">
+      <div id="clipArea"></div>
+       <div class="foot-use">
+        <div class="uploader1 blue">
+            <input type="button" name="file" class="button" value="打开"/>
+            <input id="file" type="file" onchange="javascript:setImagePreview();" accept="image/*" multiple  />
+        </div>
+
+        <span id="clipBtn">截取</span>
+        <span id="closeBtn">取消</span>
+       </div>
+     </article>
+
+   </div><!--头像-->
+
+    <ul class="base-information">
+      <li><span>真实姓名</span><input type="text" value="" placeholder="填写真实姓名"></li>
+      <li><span>性别</span>
+      <select name="" id="sex">
+        <option value="">请选择</option>
+        <option value="男">男</option>
+        <option value="女">女</option>
+      </select>
+      </li>
+      <li><span>生日</span><input type="text" name="appDate" id="appDate" value="" placeholder="请填写生日"></li>
+      <li><span>婚否</span>
+      <select name="" id="marry">
+        <option value="">请选择</option>
+        <option value="已婚">已婚</option>
+        <option value="未婚">未婚</option>
+      </select>
+      </li>
+      <li><span>职业</span><input type="text" value=""  placeholder="请填写职业"></li>
+      <li><span>所在地</span><input type="text" value="" id="txt_area" placeholder="请选择您的所在地"><input type="hidden" id="hd_area"/>
+      </li>
+    </ul>
+
+    <ul class="cer-information">
+      <li><span>微信</span><input type="text"  value="" placeholder="请填写微信号"></li>
+      <li><span>QQ</span><input type="number" min="5" max="15" value="" placeholder="请填写QQ号"></li>
+      <li class="certification cre-email cre-have"><span>邮箱</span><input type="email" name="email" value="123@163.com" placeholder="请认证邮箱" disabled="disabled"><span class="cre-tip">已认证</span></li><!--不可修改,如果认证了则给li标签加上cre-have的class,移除cre-email，把提示文字改为‘已认证’;-->
+      <li class="certification cre-id"><span>身份证号</span><input type="text" value="" name="idnumber" placeholder="请认证身份证" disabled="disabled"><span class="cre-tip">未认证</span></li><!--不可修改，默认样式为未认证样式,认证后移除cre-id-->
+      <li class="certification cre-phone cre-have"><span>手机号</span><input type="text" name="phone" value="12345678900" placeholder="请认证手机号" disabled="disabled"><span class="cre-tip">修改</span></li><!--此处手机号是可修改的，所以认证后不移除cre-phone-->
+    </ul>
+
+    <ul class="key-set">
+      <li><span>登录密码</span><input type="password" value="123" placeholder="请设置登录密码"></li>
+      <li class="keyset"><span>支付密码</span><input type="password" value="" placeholder="请设置密码"><span class="set-tip">未设置</span></li><!--如果已设置则给li标签加上keyset-have的class ,默认未为设置样式-->
+    </ul>
+
+    <input type="submit" value="保存" class="base-set-submit">
+
+
+
+    
+
+  </form>
+
+
+ <!--头像-->
+<link href="css/headimgstyle.css" rel="stylesheet" type="text/css">
+<script src="js/iscroll-zoom.js"></script>
+<script src="js/hammer.js"></script>
+<script src="js/jquery.photoClip.js"></script>
+
+<script>
+    var obUrl = ''
+    //document.addEventListener('touchmove', function (e) { e.preventDefault(); }, false);
+    $("#clipArea").photoClip({
+        width: 199,
+        height: 166,
+        file: "#file",
+        view: "#view",
+        ok: "#clipBtn",
+        loadStart: function() {
+            console.log("照片读取中");
+        },
+        loadComplete: function() {
+            console.log("照片读取完成");
+        },
+        clipFinish: function(dataURL) {
+            console.log(dataURL);
+        }
+    });
+</script>
+<script>
+    $(function(){
+$("#logox").click(function(){
+    $(".htmleaf-container").show();
+})
+        $("#clipBtn").click(function(){
+            $("#logox").empty();
+            $(".htmleaf-container").hide();
+        })
+
+        $("#closeBtn").click(function(){          
+            $(".htmleaf-container").hide();
+        })
+    });
+</script>
+
+<script type="text/javascript">
+    function setImagePreview() {
+        var preview, img_txt, localImag, file_head = document.getElementById("file_head"),
+                picture = file_head.value;
+        if (!picture.match(/.jpg|.gif|.png|.bmp/i)) return alert("您上传的图片格式不正确，请重新选择！"),
+                !1;
+        if (preview = document.getElementById("preview"), file_head.files && file_head.files[0]) preview.style.display = "block",
+                preview.style.width = "63px",
+                preview.style.height = "63px",
+                preview.src = window.navigator.userAgent.indexOf("Chrome") >= 1 || window.navigator.userAgent.indexOf("Safari") >= 1 ? window.webkitURL.createObjectURL(file_head.files[0]) : window.URL.createObjectURL(file_head.files[0]);
+        else {
+            file_head.select(),
+                    file_head.blur(),
+                    img_txt = document.selection.createRange().text,
+                    localImag = document.getElementById("localImag"),
+                    localImag.style.width = "63px",
+                    localImag.style.height = "63px";
+            try {
+                localImag.style.filter = "progid:DXImageTransform.Microsoft.AlphaImageLoader(sizingMethod=scale)",
+                        localImag.filters.item("DXImageTransform.Microsoft.AlphaImageLoader").src = img_txt
+            } catch(f) {
+                return alert("您上传的图片格式不正确，请重新选择！"),
+                        !1
+            }
+            preview.style.display = "none",
+                    document.selection.empty()
+        }
+        return document.getElementById("DivUp").style.display = "block",
+                !0
+    }
+</script>
+<!--头像-->
+
+
+
+   <script>
+   //地址
+    var selectArea = new MobileSelectArea();
+    selectArea.init({trigger:'#txt_area',value:$('#hd_area').val(),data:'data.json'});
+    </script>
+
+  <script type="text/javascript">
+  //生日
+        $(function () {
+      var currYear = (new Date()).getFullYear();  
+      var opt={};
+      opt.date = {preset : 'date'};
+      opt.datetime = {preset : 'datetime'};
+      opt.time = {preset : 'time'};
+      opt.default = {
+        theme: 'android-ics light', 
+            display: 'modal', //显示方式 
+            mode: 'scroller', //日期选择模式
+        dateFormat: 'yyyy-mm-dd',
+        lang: 'zh',
+        showNow: true,
+        nowText: " ",
+            startYear: currYear - 100, //开始年份
+            endYear: currYear + 1 //结束年份
+      };
+
+        $("#appDate").mobiscroll($.extend(opt['date'], opt['default']));
+        var optDateTime = $.extend(opt['datetime'], opt['default']);
+        var optTime = $.extend(opt['time'], opt['default']);
+        
+
+        });
+    </script>
+
+    <script>
+    /**select**/
+    $('#marry').blur(function(){
+      var marry = $(this).val();
+      if(marry!=''){
+        $('#marry').css('color','#58595b');
+        console.log(marry)
+      }
+    })
+      
+      $('#sex').blur(function(){
+        var sex = $(this).val();
+      if(sex!=''){
+        $('#sex').css('color','#58595b')
+      }
+       })
+
+
+
+      /***认证***/
+      $(function () {
+      $('.cre-email').click(function(){
+
+      })
+      })
+    </script>
+
+</div>
+    
+</body>
+</html>
